@@ -1,0 +1,234 @@
+Delivered-To: lorenzolubguban@gmail.com
+Received: by 2002:a17:906:26d4:b0:a90:2e2:6528 with SMTP id u20csp1351255ejc;
+        Sun, 29 Sep 2024 07:15:04 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGgAi5WZiUcpMTlAZqO3HptBzmo2VxKpoDMSk2knVQt1mJ74qK/81tcRGy6EMH7KebiycKr
+X-Received: by 2002:a17:902:ecc3:b0:20b:6458:ec76 with SMTP id d9443c01a7336-20b6458ef95mr21559905ad.33.1727619304445;
+        Sun, 29 Sep 2024 07:15:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727619304; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Od8v1UkdmM1CYmQMBpu935P+BjB6rAwRNENHY08rRYXQLOgddUvXnysCmmDrbmdrgF
+         wcEptD/KKCd1PPwqm4MaNXW6Z1xrp5Ys/HU/+Rd5UpasAXPDbMBXL2KTWI4RIgSqaiOG
+         4A4cHsISMsxR656GFvrTkdgk7sjtPCWgVp3YFsXCCVMWv6s6QYCHzTawV3IM5fRI5NNF
+         Whg98atlzoO26jt5uRRwzAbr9hwlYlZIoA00ZCCtYI0pPuITohGR6rqzcw5ZUT6ecvVw
+         e3x/J9XzslNBpUwtRtYs6FiGlWYTr6avu00ePvMEKNKlMEJOZ8Flz5T4kG6CLHY/+uuK
+         szhg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:auto-submitted:content-transfer-encoding:mime-version
+         :subject:message-id:to:reply-to:from:date:dkim-signature
+         :dkim-signature;
+        bh=5Ei6h+zBItNwqztPSR0E6RG4tqDpE9rcdqmfbGRBg7s=;
+        fh=XIY6o0NLlEyVDTDpidRVmUdHT3zyjXxEKUc7HzQeGME=;
+        b=JmEbTAq+dx7ccgLgP7oILCqG3yWCmhgnzZt2lmTibUf3N47CpVy4oRk2rFyAIJqF3c
+         /Xj0LIVKMkuU597mYkzRNN6DIoK5K+c9PaGc/gqILuDt9lJT3itb83ifvDhOT7qCHmeU
+         wcRIIEXPtiD5NN5x5fd1ZqTJpcWi+X9lvNE2FDvHllcM0kM8WequGsQ5BI4v567O7nvU
+         7Pi35aQK/AIcAmIkQ+tkwU00/UUg2ju8RcCceBJAgcgQHS8vsvX6R2jY9FJNZZtR61iF
+         +bOEdSmXa4htBhagoE9xFTNcVawwSYfSpxY6Fdq2GdsuAHH9qj5pY2ywNGa4WUlkkAsm
+         RoJQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@instructure.com header.s=py5iqjrdvdgjpzha3sv64mxf4n7vyfio header.b=NWmHsoBZ;
+       dkim=pass header.i=@amazonses.com header.s=c4g6esh62r66f7jpbbidkgju554h65ib header.b=hndx6UnO;
+       spf=pass (google.com: domain of 010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com designates 69.169.235.185 as permitted sender) smtp.mailfrom=010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=instructure.com
+Return-Path: <010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com>
+Received: from b235-185.smtp-out.ap-southeast-2.amazonses.com (b235-185.smtp-out.ap-southeast-2.amazonses.com. [69.169.235.185])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-7e6db5f4e8bsi6845177a12.61.2024.09.29.07.15.03
+        for <lorenzolubguban@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 29 Sep 2024 07:15:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com designates 69.169.235.185 as permitted sender) client-ip=69.169.235.185;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@instructure.com header.s=py5iqjrdvdgjpzha3sv64mxf4n7vyfio header.b=NWmHsoBZ;
+       dkim=pass header.i=@amazonses.com header.s=c4g6esh62r66f7jpbbidkgju554h65ib header.b=hndx6UnO;
+       spf=pass (google.com: domain of 010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com designates 69.169.235.185 as permitted sender) smtp.mailfrom=010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=instructure.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=py5iqjrdvdgjpzha3sv64mxf4n7vyfio; d=instructure.com;
+	t=1727619303;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=ppA+onOMTrn582Hs/Yvlo2UPFdzBn+CJwx40CtOdolo=;
+	b=NWmHsoBZ2468WYBri/dVwmmbqhaoLBa/oh2oINvj05lEA4BAolYgG3E87LJ2jor/
+	b8F7iByKNPxuIQ4sgb+KT8u5HaoNUs2AeQ4CtSUbPZT+HbZ0h9mxIh0mIdCJAxqvsyG
+	1rHmfXAMamYQJ57EsK+9Vc0jbQVPR8TskEwvJ0hwIxOPaLpaz6+giwbCKB/H2ocEzE+
+	dsDhl/4t3ki1rz5UCBuXtTNsfGU6je4QT/elNSdgNAAcD9C4Xn51D7FXCiSNmxMZXjE
+	f+Zma8CahJQvy0AlFisop4q27mCogy7QU+x/vQA545fSgqrcpIp+rBbhVRDtmXICz+f
+	yUUY9OZGaA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=c4g6esh62r66f7jpbbidkgju554h65ib; d=amazonses.com; t=1727619303;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=ppA+onOMTrn582Hs/Yvlo2UPFdzBn+CJwx40CtOdolo=;
+	b=hndx6UnOYBQp7QUAaIBq4rTEKa53sudVy4FVx0Dj0zkS0Zv9RXT50voLlcm7no0D
+	t+UidQ8yXij+VMjhgfGGRoqTJz4b9AH0zENnW2ytrk5+HFImECR8JIRl46HVoo6nR04
+	aYa0HsXGXYPZ9MYTXTmbVQ2hmgc7HK8//ufEMNw4=
+X-On-bounce-route-to: notification-service-failures-syd-prod
+Date: Sun, 29 Sep 2024 14:15:03 +0000
+From: "08847-FREE ELECTIVE 2 (FUNDAMENTALS OF  ARTIFICIAL INTELLIGENCE)" <notifications@instructure.com>
+Reply-To: 
+	reply+a5454a643b611f5d-23487~8781533-1727618402@notifications.canvaslms.com
+To: lorenzolubguban@gmail.com
+Message-ID: <010801923e2286ae-ac24aca3-80af-45ed-b9e8-e765bed03b13-000000@ap-southeast-2.amazonses.com>
+Subject: Updated Page: What Is Random Forest?, 08847-FREE ELECTIVE 2
+ (FUNDAMENTALS OF  ARTIFICIAL INTELLIGENCE)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_66f960e6a4aef_3bf4372b5c574c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Auto-Submitted: auto-generated
+Feedback-ID: ::1.ap-southeast-2.6IDSr0/hi0Dlg0gTVpLVEF3mPd02f/mjnjpULyyGkN8=:AmazonSES
+X-SES-Outgoing: 2024.09.29-69.169.235.185
+
+
+----==_mimepart_66f960e6a4aef_3bf4372b5c574c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+The page 08847-FREE ELECTIVE 2 (FUNDAMENTALS OF  ARTIFICIAL INTELLIGENCE) has been updated.
+
+What Is Random Forest?
+
+  A random forest is an ensemble learning method for classification and regression tasks, that operate by constructing multiple decision tress (each trained on a subset of samples using a subset of feature) at training time and outputting the class that is mode of the classes (in case of classification task) or mean prediction (in case of regression task) of the individual trees.
+
+You can review it here: https://universityofcebu.instructure.com/courses/45493/pages/what-is-random-forest
+
+
+
+
+
+
+________________________________________
+
+You received this email because you are participating in one or more classes using Canvas.  To change or turn off email notifications, visit:
+https://universityofcebu.instructure.com/profile/communication
+
+
+----==_mimepart_66f960e6a4aef_3bf4372b5c574c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+/*
+Changes to font size (14->16) for smaller screens
+table[class=body] is the only selector that works for all vendors
+*/
+@media only screen and (max-width: 620px) {
+  table[class=body] p,
+  table[class=body] ul,
+  table[class=body] ol,
+  table[class=body] td,
+  table[class=body] span,
+  table[class=body] a {
+    font-size: 16px !important;
+  }
+  /* remove padding for mobile so no gray shows */
+  table[class=body] .bodycell {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  /* reduce padding from 20->10 for mobile */
+  table[class=body] .maincell {
+    padding: 10px !important;
+  }
+}
+/*
+ExternalClass fixes Outlook.com / Hotmail emails
+*/
+@media all {
+  .ExternalClass {
+    width: 100%;
+  }
+  .ExternalClass,
+  .ExternalClass p,
+  .ExternalClass span,
+  .ExternalClass font,
+  .ExternalClass td,
+  .ExternalClass div {
+    line-height: 100%;
+  }
+}
+  </style>
+</head>
+<!--
+background: white (could be gray)
+default sans serif fonts, 14px, 1.3, #444444
+vendor prefixes for Outlook (-ms) and iOS (-webkit)
+Margin is capitalized to fix Outlook.com
+-->
+<body class="" style="background-color:#ffffff; font-family:'Open Sans', 'Lucida Grande', 'Segoe UI', Arial, Verdana, 'Lucida Sans Unicode', Tahoma, 'Sans Serif'; font-size:14px; color: #444444; line-height:1.3; Margin:0; padding:0; -ms-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%;">
+
+  <!-- body: background table (if body has a color, this should match) -->
+  <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse:separate; background-color:#ffffff; width:100%; box-sizing:border-box; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+    <tr>
+      <!-- width and max-width so it can scale for mobile -->
+      <td class="bodycell" style="max-width:600px; width:100%; font-family:'Open Sans', 'Lucida Grande', 'Segoe UI', Arial, Verdana, 'Lucida Sans Unicode', Tahoma, 'Sans Serif'; font-size:14px; vertical-align:top; display:block; box-sizing:border-box; padding:10px; Margin:0 auto !important;">
+
+<!-- for older versions of Outlook that don't support max-width -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<![endif]-->
+
+        <!-- main: white box for content -->
+        <table class="main" style="background:#fff; width:100%; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="maincell" style="font-family:sans-serif; font-size:14px; vertical-align:top; box-sizing:border-box; padding:20px;">
+
+                    
+<p>The page 08847-FREE ELECTIVE 2 (FUNDAMENTALS OF  ARTIFICIAL INTELLIGENCE) has been updated.</p>
+
+<p><strong>What Is Random Forest?</strong></p>
+
+  <p>A random forest is an ensemble learning method for classification and regression tasks, that operate by constructing multiple decision tress (each trained on a subset of samples using a subset of feature) at training time and outputting the class that is mode of the classes (in case of classification task) or mean prediction (in case of regression task) of the individual trees.</p>
+
+
+            </td>
+          </tr>
+        </table>
+        <!-- /.main -->
+
+        <!-- logo: branding -->
+        <table class="logo" style="width:100%; box-sizing:border-box; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="logocell" style="text-align:center; vertical-align:top; box-sizing:border-box; padding:10px;">
+              <img src="https://du11hjcvx0uqb.cloudfront.net/dist/images/email_signature-d2c5880612.png" alt="">
+            </td>
+          </tr>
+        </table>
+        <!-- /.logo -->
+
+        <!-- footer: gray text below main -->
+        <table class="footer" style="width:100%; box-sizing:border-box; border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt; ">
+          <tr>
+            <td class="footercell" style="font-family:sans-serif; font-size:14px; vertical-align:top; color:#a8b9c6; font-size:12px; text-align:center; padding:10px; box-sizing:border-box; ">
+
+                <a href="https://universityofcebu.instructure.com/courses/45493/pages/what-is-random-forest">
+    Click here to review it
+  </a> &nbsp;|&nbsp;
+
+                <a href="https://universityofcebu.instructure.com/profile/communication" style="white-space: nowrap;">Update your notification settings</a>
+
+            </td>
+          </tr>
+        </table>
+        <!-- /.footer -->
+
+<!--[if (gte mso 9)|(IE)]>
+</td></tr></table>
+<![endif]-->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /.body -->
+
+</body>
+</html>
+
+----==_mimepart_66f960e6a4aef_3bf4372b5c574c--

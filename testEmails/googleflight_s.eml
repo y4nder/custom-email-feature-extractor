@@ -1,0 +1,522 @@
+Delivered-To: lorenzolubguban@gmail.com
+Received: by 2002:a17:906:7fc1:b0:a90:2e2:6528 with SMTP id r1csp63600ejs;
+        Wed, 18 Sep 2024 21:36:02 -0700 (PDT)
+X-Received: by 2002:a05:6102:c0d:b0:49b:e3fd:b6d0 with SMTP id ada2fe7eead31-49d4146813emr24192658137.5.1726720562354;
+        Wed, 18 Sep 2024 21:36:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1726720562; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dm3No+B8/cvYBkJQm5HytpxSB1ZvAF41pzh+wMII6hj1qWZokUjb4s4Y4jHHlU5B9A
+         mhEMTEq3NEPJ+7SrsCHxeUULwAsHXzuYeyPCC8uoQo79mcgW/IXZXlm46BXXReF9qxOG
+         9yJrCddCFKxAPB43p6fsWHaMSAnJj/fXmifDI6kDgr6ETAAEHhgkoXiqL41ud0ifFKt1
+         jJhelsLMBCRJ0FWfy+U74Q60hGw9nLcURM7gWnc1+iHcWVA7JMgEtp31BEmG6W92SzeY
+         A8Oe3CaZ4pLiT+Z41pRqbvaHX+7yY+N3QYfXqUrueCn3jf5xxUGvPg7I+eeQ8ma3RdaQ
+         gxCg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:list-id:feedback-id:precedence
+         :list-unsubscribe:reply-to:date:mime-version:dkim-signature;
+        bh=qRQn5Fd3fs1slR2IulZLaJRDt+tC/U0WVg8mxpC651U=;
+        fh=XIY6o0NLlEyVDTDpidRVmUdHT3zyjXxEKUc7HzQeGME=;
+        b=qa8PzmMB7MUceolSE2yiD9H19hQnLhMbd7gZtkiTN7+J2YCcBTL5jXE3GFm0rXFoSF
+         7cqnEcI+6jjZBvLW6XJVLT6rLDzj54eAABiXuZk1pFiX/naodRnPLEaJ+eVLDbDpHNP6
+         +5Dj3m4TKiYqu+Oigr1G56NFzDGo6A7lpDosCeOpk3Wi50CEiNiTImoFn8erGmgMoDlD
+         U/U1gdWVo7j/+w71bQjPu4ppdC9aZL4A+y1W4uo3ht1i2L3qrtDUtPZfCGjLv6nULNW5
+         xb9I8AsT6QbPhz9+V167cDEYq9La9vxaVm/mNHJj2Z54TocGBhFJZu2eQF7DRJMbLRwW
+         D4RA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=D+tXuLGk;
+       spf=pass (google.com: domain of 3mqrrzg4kd3mefivgcp-kirmvcxffxcv.tfdcfiveqfclsxlsrexdrzc.tfd@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3MqrrZg4KD3MefiVgcp-kiRmVcXffXcV.TfdcfiVeqfclSXlSReXdRZc.Tfd@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <3MqrrZg4KD3MefiVgcp-kiRmVcXffXcV.TfdcfiVeqfclSXlSReXdRZc.Tfd@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id d75a77b69052e-459aaca4a48sor69397971cf.4.2024.09.18.21.36.02
+        for <lorenzolubguban@gmail.com>
+        (Google Transport Security);
+        Wed, 18 Sep 2024 21:36:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3mqrrzg4kd3mefivgcp-kirmvcxffxcv.tfdcfiveqfclsxlsrexdrzc.tfd@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=D+tXuLGk;
+       spf=pass (google.com: domain of 3mqrrzg4kd3mefivgcp-kirmvcxffxcv.tfdcfiveqfclsxlsrexdrzc.tfd@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3MqrrZg4KD3MefiVgcp-kiRmVcXffXcV.TfdcfiVeqfclSXlSReXdRZc.Tfd@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1726720562; x=1727325362; dara=google.com;
+        h=to:from:subject:message-id:list-id:feedback-id:precedence
+         :list-unsubscribe:reply-to:date:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=qRQn5Fd3fs1slR2IulZLaJRDt+tC/U0WVg8mxpC651U=;
+        b=D+tXuLGktodl2najcZT8wYjjfYZTFnv6uLH/3maTb4cGAHt36cuUYrm11lh0l9/OPT
+         blNQpKg5lA08T1FfxIQQoA7oWKK37Vx4m3J71GIrEUNlFq4UFgSFQu8oIyyCCTovCStz
+         9Y9I947mZEUfgjVBA/NSKtYWnWaBJqurxgWX7w8TjXkSRqTwLCSir6GoTYQLg9NdO0NW
+         qm5dNsIm6RzIGAfqExCOPlth1nBkDWoMK9/saDc2A0O14lLAMV8861MzEIqUBwH7LROt
+         +6WgkxcDkM2pWds4ZCsUwIfi4Oc4vew+qbI5VDyvRq8a6TBN6lgZbPMNnZDohSLkgXpk
+         Cf7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726720562; x=1727325362;
+        h=to:from:subject:message-id:list-id:feedback-id:precedence
+         :list-unsubscribe:reply-to:date:mime-version:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=qRQn5Fd3fs1slR2IulZLaJRDt+tC/U0WVg8mxpC651U=;
+        b=LlXE1UCnA1fxFii9hfjwqP+sHlViVI7+WpOwpIVhaxNf+OlCdFK41oXZkDB7Ty87UZ
+         gFq53M1CyDUnMkBb5A+emHOueQi2SQmggyaTKjVnLm+l6m6fYBlRzPRfiurT+dXrhd5V
+         Lf4aLH5qX+D9VMpcRHDTgyFK4J3xIUxO5iAcViPdm2GtUZ5Bur/lTE5abYYKBojl5sex
+         w6XFztNSlkKAvohFi70Jzz4Rk/Meorq5N1chil0s6aInznFjjultxkDPfcB3YIAPzo4d
+         5qUw6FEe6ah17DQ+eYk0XDSFArfMeC58afIq26PhNptFTHCz4cKezpP0IcmgEb0eE0yx
+         Do9Q==
+X-Gm-Message-State: AOJu0YylRXq/HSdrbbJK6tutzmuEbzhbVAOVaDVEOKuuO3rJ/iPbGWl0
+	XPjAPQg0997XvmfNNFsX8RF9xKKo4gRAVEvILLI1wsBvM7b1k6aruRuG
+X-Google-Smtp-Source: AGHT+IEchG0unBzAmhH50AVr9TLEp/6Kx7j+SyLmigCfWrqfxDLQ9RJ5wNsZkim0LlKQ/+43kNGNzMI=
+MIME-Version: 1.0
+X-Received: by 2002:a05:622a:1b9f:b0:458:318b:556b with SMTP id
+ d75a77b69052e-4586032982dmr352060251cf.35.1726720562042; Wed, 18 Sep 2024
+ 21:36:02 -0700 (PDT)
+Date: Wed, 18 Sep 2024 21:36:02 -0700
+Reply-To: Google Flights <noreply-travel@google.com>
+X-Google-Id: ariane/236375
+List-Unsubscribe: <https://notifications.google.com/g/optout/ANiao5qdHQBGaFS1wjhpdn_DgCVO-o2sLzt76fr7cRloOk3ePSiJF2aQE-M3iKuizkJ3eZLVY4ZqIC2cNSx8ewmf_qZIKZD4LzkbzbDprgVQU5rCpWHNcoZO8oFp_aFnLVGQycuFC-GT271ZvIWul6bDuZlNIsKLw-aVO_5Cv7_lpJWwRHnloTcqY7UW1IEL_7ifhtHEathd0efdx5R9QH6i0BifDrGN9v3qdjYP5iiOu7fziQLN-fxLkGKPJFzbrLDNn5_HspVt9cbdtqsIHCEB-O3N05oG4OppzAw5SGWwPW8?hl=en-GB>
+Precedence: bulk
+Feedback-ID: P-191-13201:C20058712:M110122812-en-GB:gamma
+List-Id: <da0b94311c5e0ef0619b38bf39f147227266339e.google.com>
+X-Notifications: f9b4d733a8c20000
+X-Notifications-Bounce-Info: AdZT3xR-UahDwM8OabCV1qWRQxJTml0-bpLTNtDuf8Rb1oiVvppARnOD9KjrfNEDxNPzrAMmW_Yi_43WPpCUrn0cZcgeTkDAVd0Z-VPCvp0bDKEgYzZODsqTz2z7sJNU0BZiqIGGsAKrlpEeJu3M7c9J7WMHqS2y3YQbeMN7bjK-gDRetIVt_2ljaBOb9JnQcjXs5EY-_ZlyYgzTs8yBIMyDT65-YB9B0AitB-xMY7GZDQ2ju3DLuNR_X2cTTy75TYQZnMcUStw0VaglQVMUGI_ae-UMZU9Xk8YfOLUPC1-FMu3UPV_UuV5lr8ZFsIopRRdRVVcsG7WwSOvOOsaZy0cFUfyZBgHz54HG1zwm7l7isRnp7ScA2M7gO_euB9ZtpoL4BZNSF8nKda2twzZFTqYuAvmBI4lUcvTQr3J37SO24BtCtUHzxO2Dfe01Tsvfq9z7eWLHH5Tp1gxn9D8kAFfkREK-ANYZMbzKtR1BB4G6Okq3KB3HFtcgX4F9aZ26hKOTwyphFs65C62DaDgD1CsZUt8BkQb9oBRkgLloxL5EjwCuqKlYTtGiNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <23a025cab1def01d36985c8c8ae0b4a38836cac9-20058712-110319239@google.com>
+Subject: =?UTF-8?B?WW91ciB0cmFja2VkIGZsaWdodCB0byBNYW5pbGEgaXMgbm93IOKCsTQsNDY2ICh3YXMg?=
+	=?UTF-8?B?4oKxMyw4MDEp?=
+From: Google Flights <noreply-travel@google.com>
+To: lorenzolubguban@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ba170606227175ff"
+
+--000000000000ba170606227175ff
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+DQoNCkdvb2dsZSBGbGlnaHRzDQoNCkhlbGxvLA0KDQpUaGVyZSdzIGJlZW4gYSBwcmljZSBjaGFu
+Z2Ugb24gdGhlIGZvbGxvd2luZyBkZXN0aW5hdGlvbnMgYW5kIGRhdGVzOg0KDQpDZWJ1IENpdHkg
+dG8gTWFuaWxhDQpTYXQsIDIxIFNlcHQg4oCTIFR1ZSwgMjQgU2VwdA0KUm91bmQgdHJpcCDCtyAx
+IGFkdWx0DQpodHRwczovL3d3dy5nb29nbGUuY29tL3RyYXZlbC9mbGlnaHRzP3Rmcz1DQTBRQWhv
+ZUVnb3lNREkwTFRBNUxUSXhhZ2NJQVJJRFEwVkNjZ2NJQVJJRFRVNU1HaDRTQ2pJd01qUXRNRGt0
+TWpScUJ3Z0JFZ05OVGt4eUJ3Z0JFZ05EUlVKQUFVZ0JVZ05RU0ZCNmFFTnFVa2xrYTJ4YVUyMWFX
+Rmx0Um5Wa2VrSkNVVEp3Y0dWc1JrTlNlVEIwVEZNd2RFeFRNSFJNV0ZveldtMDRlVTVWUmtKUlZV
+WkNVakpLZVdOWGNFWlJNVkptV0RCT1FrVm5WbUZOYW1NeVRXaHZTME5RYjFwRlFVRmhRVEZDU1ZW
+RVoyUmpUbEYxJmN1cnI9UEhQJnV0bV9zb3VyY2U9RkxSRSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9j
+YW1wYWlnbj1QQyZ1dG1fY29udGVudD1NRFANCg0KDQpZb3VyIHRyYWNrZWQgZmxpZ2h0DQrigJPi
+gJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPi
+gJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPigJPi
+gJMNCjA1OjM1IOKAkyAwNjo1NQ0KUGhpbGlwcGluZXMgQWlyQXNpYSDCtyBOb24tc3RvcCDCtyBD
+RULigJNNTkwNCuKCsTQsNDY2IChpbmNyZWFzZWQgZnJvbSDigrEzLDgwMSkNCmh0dHBzOi8vd3d3
+Lmdvb2dsZS5jb20vdHJhdmVsL2ZsaWdodHM/dGZzPUNBMFFBaG9fRWdveU1ESTBMVEE1TFRJeElo
+OEtBME5GUWhJS01qQXlOQzB3T1MweU1Sb0RUVTVNS2dKYU1qSUROell3YWdjSUFSSURRMFZDY2dj
+SUFSSURUVTVNR2o4U0NqSXdNalF0TURrdE1qUWlId29EVFU1TUVnb3lNREkwTFRBNUxUSTBHZ05E
+UlVJcUFsb3lNZ00zTmpGcUJ3Z0JFZ05OVGt4eUJ3Z0JFZ05EUlVKQUFVZ0JVZ05RU0ZBJmN1cnI9
+UEhQJnV0bV9zb3VyY2U9RkxSRSZ1dG1fbWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1QQyZ1dG1f
+Y29udGVudD1GTElHSFQNCg0KDQoNCg0KDQpQcmljZXMgdXBkYXRlZCAxOSBTZXB0ZW1iZXIgMjAy
+NCBhdCAwNDozNiBHTVQNCg0KWW91IGhhdmUgcmVjZWl2ZWQgdGhpcyBlbWFpbCBiZWNhdXNlIHlv
+dSBzaWduZWQgdXAgdG8gcmVjZWl2ZSB0cmF2ZWwgdGlwcw0KYW5kIHByaWNlIHVwZGF0ZXMgZnJv
+bSBHb29nbGUgRmxpZ2h0cy4NCg0KTWFuYWdlIHByaWNlIHRyYWNraW5nDQooaHR0cHM6Ly93d3cu
+Z29vZ2xlLmNvbS90cmF2ZWwvZmxpZ2h0cz90ZnM9Q0EwUUJBJnV0bV9zb3VyY2U9RkxSRSZ1dG1f
+bWVkaXVtPUVNQUlMJnV0bV9jYW1wYWlnbj1QQyZ1dG1fY29udGVudD1NQU5BR0UpDQoNClVuc3Vi
+c2NyaWJlIGZyb20gYWxsIEdvb2dsZSBGbGlnaHRzIGVtYWlscyAgDQo8aHR0cHM6Ly9ub3RpZmlj
+YXRpb25zLmdvb2dsZS5jb20vZy9vcHRvdXQvQU5pYW81cXZjYm9QYmNkX1FDMGdlUWttdkt1M25v
+M1U5ODNCeTluMG4wSU9Zbld6VWFTTjZKVDNrM1k4TmhfU1dTcTBlSGw1cWthcGxYd29PcmpJNVJO
+T1pXTHdlVzhGVEZxRTBjUWFtNl9BMWtwSnRUa3R5bURWeGFXUHFCQXRoVXZQeTNOeVY2YXZCamQ4
+ZDVUQm9LLXJQem9PbTZ4YVdqMk41aGVLOThMWk5vajNreVpkc0lfOG9oMVhkck85VnJDSmhtNzla
+Z09ucV9DZEpxQl9seG56UEJfTzVwMzlxcjlnRnprTFk0NDA4SlBBRHlWbnJrbjBqdHFrR21tdElR
+c2RxYjduNXhZZENVNUZRVllSMnRQVE1YcTVCbU9Ya0JwMzgycjIzYTFwP2hsPWVuLUdCPg0K
+--000000000000ba170606227175ff
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+<html xmlns=3Dhttp://www.w3.org/1999/xhtml xmlns:o=3Durn:schemas-microsoft-=
+com:office:office xmlns:v=3Durn:schemas-microsoft-com:vml lang=3Den xml:lan=
+g=3Den><head><!-- [if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG=
+/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![=
+endif] --><title>Price alert for your tracked flight</title><meta http-equi=
+v=3DContent-Type content=3D"text/html; charset=3Dutf-8"></head><body style=
+=3Dbackground:#fff;><table class=3DtravelReengagementTemplatesFlightsBaseBo=
+dy align=3Dcenter cellpadding=3D0 cellspacing=3D0 role=3Dpresentation style=
+=3D"border:1px solid #dadce0; width:100%; table-layout:fixed; background-co=
+lor:#fff; margin:0 auto; padding:0;"><tbody><tr><td><table class=3DtravelRe=
+engagementTemplatesFlightsBaseHeader cellpadding=3D0 cellspacing=3D0 role=
+=3Dpresentation style=3D"background-color:#fff; border:0; margin:0; text-al=
+ign:center; border-bottom:1px solid #dadce0; width:100%;"><tbody><tr class=
+=3Dlogo-container style=3Dheight:76px;><td valign=3Dmiddle style=3D"vertica=
+l-align:middle; padding-top:10px; font-family:Roboto,Helvetica Neue,Arial,s=
+ans-serif;"><img alt=3D"" class=3DCToWUd src=3Dhttps://www.gstatic.com/trav=
+el-booking/2x/google_flights_logo_28dp.png style=3D"height:28px; max-height=
+:28px;"></td></tr></tbody></table><table class=3Dbody-container align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 role=3Dpresentation style=3D"margin:0 a=
+uto; max-width:600px; padding:50px 20px 20px;"><tbody><tr><td align=3Dcente=
+r><table class=3Dcontent-container border=3D0 cellpadding=3D0 cellspacing=
+=3D0 role=3Dpresentation style=3D"background-color:#fff; max-width:600px; b=
+order:0;"><tbody><tr><td rowspan=3D3></td><td></td><td rowspan=3D3></td></t=
+r><tr><td><div class=3DtravelReengagementTemplatesFlightsBaseContent><table=
+ class=3Dcontent-wrapper border=3D0 cellpadding=3D0 cellspacing=3D0 role=3D=
+presentation style=3Dmax-width:600px;><tbody><tr><td class=3Dgreeting-wrapp=
+er style=3D"color:#222; font-family:Roboto,Helvetica Neue,Arial,sans-serif;=
+ font-size:20px; font-weight:400; margin:0; padding-top: 19px;">Hello,</td>=
+</tr><tr><td class=3Dmain-content-wrapper style=3D"color:#222; font-family:=
+Roboto,Helvetica Neue,Arial,sans-serif; font-size:14px; font-weight:400; li=
+ne-height:24px;"><div class=3Dfare-alert-content><p style=3D"color:#222; fo=
+nt-family:Roboto,Helvetica,Arial,sans-serif; font-size:14px; margin:16px 0 =
+24px;"> There&#39;s been a price change on the following destinations and d=
+ates: </p><table class=3D"fare-alert-group main-content" bgcolor=3D#ffffff =
+border=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpresentation style=3D"bor=
+der-bottom-left-radius:3px; border-bottom-right-radius:0; border-color:#f0f=
+0f0 #f0f0f0 #e0e0e0; border-style:solid; border-width:1px; background-color=
+:#fff; padding:0; border-spacing:0; max-width:600px; min-width:332px; margi=
+n:0; width:100%;"><tbody><tr class=3DtravelReengagementTemplatesFlightsBase=
+Market><td class=3Dmdp colspan=3D4 style=3D"color:#000; font-family:Roboto,=
+Helvetica Neue,Arial,sans-serif; font-size:16px; font-weight:400; line-heig=
+ht:24px; margin:4px 0 14px; padding:13px 22px 13px 17px;"><a target=3D_blan=
+k href=3Dhttps://notifications.google.com/g/p/ANiao5r2mUqrv7SOWDj5jPq36mKge=
+r_7oP4J_YPZxXjCZwfSRWcDcYL1O7NKRwGju1LVW4FK1hU3gNrtlZ8rk_NBMy3FhxSF3g46NmhS=
+CsNLppyAYRQkxNNafwR9s2DSYQhqecaNI2MME3kK6Emqv_XS1xpdLg-k8eyfuPo1CAG2N_yMNXr=
+HUaNTz7GnOaE3Y4QFk9IQQrGcjALe04Q6MvVqSIxlxu2j_RMR3NoHPBFciagXEkhLVULjF3KTnY=
+TRGs5yQ9qGcFwif5ROyUKwHdewcOU1RCyBBiEzg6hJj6SIjMSzu2CskwtDCXPpC3rMRnFHnFZCv=
+iUOL6VvEIRJ9XlqqkD0U8HQO_S-3SDKDJob3yi2KKp7A4B_hFpUg9-MHo3PKltvgkKCVG5Bn3Ak=
+1hVgaMI3Y_6AwYsr7vizRZSR1FOyhJwQ9z1tF9MjyjgTW6w6PbjRunCt_rbjid_WOWbp5uj-uAw=
+ZKzMwof_DOENm34FX9g8T1Vl78BxRB135F9eqpG7fuCOFa16IeOLIYL56g_5jhwrTWyQ7qrPK6R=
+L57NCGvRDW41n1GfjQC7vr6Oc6oLlWlYOs_fCev7BnkZRzT7i4ghYQjrgz9m7rakGgnRSsmKrZl=
+kDmDGb7ygtTwFrCYGSOf_GY8cth3toKlQ25DITzEctb00TMChv88A style=3Dtext-decorati=
+on:none;><div class=3Dorigin-destination-wrapper style=3D"font-size:16px; c=
+olor:#222; font-weight:700;"> Cebu City to Manila </div><div class=3Dsimple=
+-dates-wrapper style=3D"font-size:14px; color:#222; white-space:nowrap;">Sa=
+t, 21 Sept=E2=80=93Tue, 24 Sept</div><div class=3Dfilters-wrapper style=3D"=
+font-size:14px; color:#7f7f7f;"><span>Round trip =C2=B7 </span><span>1 adul=
+t</span></div></a></td></tr><tr class=3Dinner-table><td colspan=3D4><table =
+bgcolor=3D#ffffff border=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpresent=
+ation style=3D"max-width:600px; min-width:332px; width:100%; margin:0;"><tb=
+ody><tr class=3D"section-heading top"><td colspan=3D4 style=3D"border-top:1=
+px solid #e7e5e5; line-height:0;">=C2=A0</td></tr><tr><td class=3D"section-=
+heading message-wrapper" colspan=3D4 style=3D"font-family:Roboto,Helvetica,=
+Arial,sans-serif; font-size:14px; font-weight:400; line-height:24px; margin=
+:4px 0 14px; padding:13px 22px 13px 17px; color: #7f7f7f;">Your tracked fli=
+ght</td></tr><tr class=3D"section-heading bottom"><td class=3Dpadding style=
+=3D"min-width:20px; width:20px;"></td><td class=3Dborder colspan=3D3 style=
+=3D"border-top:1px solid #e7e5e5; line-height:0;">=C2=A0</td></tr><tr class=
+=3DtravelReengagementTemplatesFlightsBaseFlight><td class=3Dpadding-row sty=
+le=3D"min-width:20px; width:20px;"></td><td class=3Dairline-icon-container =
+valign=3Dmiddle style=3D"text-align:left; padding:18px 5px 18px 0; width:32=
+px;"><a target=3D_blank href=3Dhttps://notifications.google.com/g/p/ANiao5p=
+NycpI4nUxHNwMQ95irh59ZeqpROYAzVU_0y3Bgj2dxFFmEm2O-ASxCrmX1RR5isjHQ7gg2_S_eW=
+kn6i5fRWHijyWZzBMKfc7J5xnXnHvwFbFDGl3wzZAslDoKmmM-_zX1ab0aHvYg4-3quA7LQh1pP=
+htg5MBDPOB0WE44wfm6Ctl1iqZUn6dP1ahF_4vSdtnmyDB1WSXKYaMoZDF4IXxmR15bllEAxZxG=
+E5YhdH2oY_bl8tPr60glf6TnNApbONBT6EKP3MYzLVqblML1PAEc3pEU7s4kPkl0I7Y93YLlJ5j=
+tAV8K-QSdhgH_xJgjkcuT73kU5tapFD9RndL5B5Y76yrPdbQFr7asQBDb0rk_32aRrOYldQKT6L=
+zy9FphBYYt379OYqmxAp9E4eusKrEWr6MQlbtzLg08rYjdLXWkiraukEw_7x67Bu0Y8fQZ051jB=
+ssLQTKnKYuNGnZBBZ5GdykC4sJFao4EW1Nnq77JzxU0SWhGZT_ZAORzgR3l2sx0k29SM0coPRLz=
+baHhx3_Kyt3WW-uwNUMjG-yht6Jcn4PV596xbRHRPt5R7uPpHGhArYg6jEH5A7yui5O5zQp96Ww=
+Q1oSzkOQ><img alt=3D-1 src=3Dhttps://www.gstatic.com/flights/airline_logos/=
+70px/Z2.png style=3D"height:35px; max-height:35px;"></a></td><td class=3Dfl=
+ight-info style=3D"font-family:Roboto,Helvetica Neue,Arial,sans-serif; padd=
+ing:18px 5px 18px 20px; line-height:24px;"><a target=3D_blank href=3Dhttps:=
+//notifications.google.com/g/p/ANiao5pNycpI4nUxHNwMQ95irh59ZeqpROYAzVU_0y3B=
+gj2dxFFmEm2O-ASxCrmX1RR5isjHQ7gg2_S_eWkn6i5fRWHijyWZzBMKfc7J5xnXnHvwFbFDGl3=
+wzZAslDoKmmM-_zX1ab0aHvYg4-3quA7LQh1pPhtg5MBDPOB0WE44wfm6Ctl1iqZUn6dP1ahF_4=
+vSdtnmyDB1WSXKYaMoZDF4IXxmR15bllEAxZxGE5YhdH2oY_bl8tPr60glf6TnNApbONBT6EKP3=
+MYzLVqblML1PAEc3pEU7s4kPkl0I7Y93YLlJ5jtAV8K-QSdhgH_xJgjkcuT73kU5tapFD9RndL5=
+B5Y76yrPdbQFr7asQBDb0rk_32aRrOYldQKT6Lzy9FphBYYt379OYqmxAp9E4eusKrEWr6MQlbt=
+zLg08rYjdLXWkiraukEw_7x67Bu0Y8fQZ051jBssLQTKnKYuNGnZBBZ5GdykC4sJFao4EW1Nnq7=
+7JzxU0SWhGZT_ZAORzgR3l2sx0k29SM0coPRLzbaHhx3_Kyt3WW-uwNUMjG-yht6Jcn4PV596xb=
+RHRPt5R7uPpHGhArYg6jEH5A7yui5O5zQp96WwQ1oSzkOQ style=3Dtext-decoration:none=
+;><div class=3Dtimes style=3D"font-size:16px; color:#222; white-space:nowra=
+p;">05:35 =E2=80=93 06:55<sup></sup></div><div class=3Dattributes style=3D"=
+font-size:14px; color:#7f7f7f;"><span class=3Dattribute style=3Dwhite-space=
+:nowrap;>Philippines AirAsia =C2=B7 </span><span class=3Dattribute style=3D=
+white-space:nowrap;>Non-stop =C2=B7 </span><span class=3Dattribute style=3D=
+white-space:nowrap;>CEB=E2=80=93MNL</span></div><div class=3Dbaggage-info s=
+tyle=3D"font-size:11px; color:#7f7f7f;"></div></a></td><td class=3Dprice-ch=
+ange-wrapper style=3D"font-family:Roboto,Helvetica Neue,Arial,sans-serif; f=
+ont-size:14px; padding:26px 25px 18px 10px; text-align:right; vertical-alig=
+n:top; line-height:24px;"><a target=3D_blank href=3Dhttps://notifications.g=
+oogle.com/g/p/ANiao5pNycpI4nUxHNwMQ95irh59ZeqpROYAzVU_0y3Bgj2dxFFmEm2O-ASxC=
+rmX1RR5isjHQ7gg2_S_eWkn6i5fRWHijyWZzBMKfc7J5xnXnHvwFbFDGl3wzZAslDoKmmM-_zX1=
+ab0aHvYg4-3quA7LQh1pPhtg5MBDPOB0WE44wfm6Ctl1iqZUn6dP1ahF_4vSdtnmyDB1WSXKYaM=
+oZDF4IXxmR15bllEAxZxGE5YhdH2oY_bl8tPr60glf6TnNApbONBT6EKP3MYzLVqblML1PAEc3p=
+EU7s4kPkl0I7Y93YLlJ5jtAV8K-QSdhgH_xJgjkcuT73kU5tapFD9RndL5B5Y76yrPdbQFr7asQ=
+BDb0rk_32aRrOYldQKT6Lzy9FphBYYt379OYqmxAp9E4eusKrEWr6MQlbtzLg08rYjdLXWkirau=
+kEw_7x67Bu0Y8fQZ051jBssLQTKnKYuNGnZBBZ5GdykC4sJFao4EW1Nnq77JzxU0SWhGZT_ZAOR=
+zgR3l2sx0k29SM0coPRLzbaHhx3_Kyt3WW-uwNUMjG-yht6Jcn4PV596xbRHRPt5R7uPpHGhArY=
+g6jEH5A7yui5O5zQp96WwQ1oSzkOQ style=3Dtext-decoration:none;><div class=3Dtr=
+avelReengagementTemplatesFlightsBasePriceChange><div class=3D"price increas=
+e" style=3D"white-space:nowrap; line-height:16px; padding-bottom:4px;"><img=
+ alt=3D"trending up" src=3Dhttps://www.gstatic.com/travel-reengagement/pric=
+e_up_2x.png style=3D"height:11px; max-height:11px;"><span class=3DtravelRee=
+ngagementTemplatesFlightsBaseNewPrice style=3D"font-size:16px; font-weight:=
+700; margin-left:2px; white-space:nowrap; color: #D0021B;">=E2=82=B14,466</=
+span></div><div class=3DtravelReengagementTemplatesFlightsBaseOldPriceSubti=
+tle style=3D"color:#222; font-size:14px; text-decoration: line-through;">=
+=E2=82=B13,801</div></div></a></td></tr></tbody></table></td></tr><tr class=
+=3Dinner-table><td colspan=3D4><table bgcolor=3D#ffffff border=3D0 cellpadd=
+ing=3D0 cellspacing=3D0 role=3Dpresentation style=3D"max-width:600px; min-w=
+idth:332px; width:100%; margin:0;"><tbody><tr class=3D"section-heading top"=
+><td colspan=3D4 style=3D"border-top:1px solid #e7e5e5; line-height:0;">=C2=
+=A0</td></tr><tr><td class=3D"section-heading message-wrapper" colspan=3D4 =
+style=3D"font-family:Roboto,Helvetica,Arial,sans-serif; font-size:14px; fon=
+t-weight:400; line-height:24px; margin:4px 0 14px; padding:13px 22px 13px 1=
+7px; color: #7f7f7f;">Alternative flights</td></tr><tr class=3D"section-hea=
+ding bottom"><td class=3Dpadding style=3D"min-width:20px; width:20px;"></td=
+><td class=3Dborder colspan=3D3 style=3D"border-top:1px solid #e7e5e5; line=
+-height:0;">=C2=A0</td></tr><tr class=3DtravelReengagementTemplatesFlightsB=
+aseFlight><td class=3Dpadding-row style=3D"min-width:20px; width:20px;"></t=
+d><td class=3Dairline-icon-container valign=3Dmiddle style=3D"text-align:le=
+ft; padding:18px 5px 18px 0; width:32px;"><a target=3D_blank href=3Dhttps:/=
+/notifications.google.com/g/p/ANiao5rPGos7DrdxCE5cfcHqB_x3SZ73xQXJCb17C2rY_=
+y0JgTTv5UCipDhaC6dWlX7yPrZFRSpChjrz75eZnna1jSP2hhAApdcw-ifJS6u8MeeobxMjTDf2=
+beUsIsV65FKp66GPOmEXoFCOFg1ymqSV3nqycGSNPSgKGfs44csVyQuaqXyfD0fjwFG1TiMJzdd=
+zHRxpN9QCEWmmX7TKOXGrUoXxe7Ra9ofQ2urY3kjLMYfLOThbsTCVoQVtyX-UfRnnA8z3H8DoR-=
+KFnKarqWuJWu3L2EyxAMMsO3SAwiCg9dDAhIDpVzOzaXdb_Xt3OvfBNbLd8bjtODQFzgnvTwA_n=
+NRtuWAmt0VfrSeLqsfFqPurGHhMaGkWMQRdi-_W_uQ0LIwZENIWhsg3OpqnliscnudTT_Zulcbe=
+ZLTyFXUbY7hcnQuh_8JT4gDv4VG_Cy8_SGPBdjLKU3zeAbay_T2SSol4vKtpfcv3x3ZJNNRFmU-=
+m9tWElvaUmWSFsuNbtj2cZ_nv5h7g0SC79e5kDyz0gPDQRWnjLLxwQza2Wd2rzZQrz9ZGuPhf7v=
+mWVI8o3VfMxslkM3kJAVCPjt0y_PYr0th1LCVZaOfVhrNJbJyrBG8dkrVyqGYpxJEkqIl2sLDwV=
+qLSGEpyfuVd-EBV2LhhoOzxnyBlrc8jwcj-ff1uc8hUbSGrwTAEsPFV5uDoEr3I-QNB63x05U3D=
+7IHOy4LDVjv_744fUuff1A><img alt=3D-1 src=3Dhttps://www.gstatic.com/flights/=
+airline_logos/70px/Z2.png style=3D"height:35px; max-height:35px;"></a></td>=
+<td class=3Dflight-info style=3D"font-family:Roboto,Helvetica Neue,Arial,sa=
+ns-serif; padding:18px 5px 18px 20px; line-height:24px;"><a target=3D_blank=
+ href=3Dhttps://notifications.google.com/g/p/ANiao5rPGos7DrdxCE5cfcHqB_x3SZ=
+73xQXJCb17C2rY_y0JgTTv5UCipDhaC6dWlX7yPrZFRSpChjrz75eZnna1jSP2hhAApdcw-ifJS=
+6u8MeeobxMjTDf2beUsIsV65FKp66GPOmEXoFCOFg1ymqSV3nqycGSNPSgKGfs44csVyQuaqXyf=
+D0fjwFG1TiMJzddzHRxpN9QCEWmmX7TKOXGrUoXxe7Ra9ofQ2urY3kjLMYfLOThbsTCVoQVtyX-=
+UfRnnA8z3H8DoR-KFnKarqWuJWu3L2EyxAMMsO3SAwiCg9dDAhIDpVzOzaXdb_Xt3OvfBNbLd8b=
+jtODQFzgnvTwA_nNRtuWAmt0VfrSeLqsfFqPurGHhMaGkWMQRdi-_W_uQ0LIwZENIWhsg3Opqnl=
+iscnudTT_ZulcbeZLTyFXUbY7hcnQuh_8JT4gDv4VG_Cy8_SGPBdjLKU3zeAbay_T2SSol4vKtp=
+fcv3x3ZJNNRFmU-m9tWElvaUmWSFsuNbtj2cZ_nv5h7g0SC79e5kDyz0gPDQRWnjLLxwQza2Wd2=
+rzZQrz9ZGuPhf7vmWVI8o3VfMxslkM3kJAVCPjt0y_PYr0th1LCVZaOfVhrNJbJyrBG8dkrVyqG=
+YpxJEkqIl2sLDwVqLSGEpyfuVd-EBV2LhhoOzxnyBlrc8jwcj-ff1uc8hUbSGrwTAEsPFV5uDoE=
+r3I-QNB63x05U3D7IHOy4LDVjv_744fUuff1A style=3Dtext-decoration:none;><div cl=
+ass=3Dtimes style=3D"font-size:16px; color:#222; white-space:nowrap;">01:45=
+ =E2=80=93 03:05<sup></sup></div><div class=3Dattributes style=3D"font-size=
+:14px; color:#7f7f7f;"><span class=3Dattribute style=3Dwhite-space:nowrap;>=
+Philippines AirAsia =C2=B7 </span><span class=3Dattribute style=3Dwhite-spa=
+ce:nowrap;>Non-stop =C2=B7 </span><span class=3Dattribute style=3Dwhite-spa=
+ce:nowrap;>CEB=E2=80=93MNL</span></div><div class=3Dbaggage-info style=3D"f=
+ont-size:11px; color:#7f7f7f;"></div></a></td><td class=3Dprice-change-wrap=
+per style=3D"font-family:Roboto,Helvetica Neue,Arial,sans-serif; font-size:=
+14px; padding:26px 25px 18px 10px; text-align:right; vertical-align:top; li=
+ne-height:24px;"><a target=3D_blank href=3Dhttps://notifications.google.com=
+/g/p/ANiao5rPGos7DrdxCE5cfcHqB_x3SZ73xQXJCb17C2rY_y0JgTTv5UCipDhaC6dWlX7yPr=
+ZFRSpChjrz75eZnna1jSP2hhAApdcw-ifJS6u8MeeobxMjTDf2beUsIsV65FKp66GPOmEXoFCOF=
+g1ymqSV3nqycGSNPSgKGfs44csVyQuaqXyfD0fjwFG1TiMJzddzHRxpN9QCEWmmX7TKOXGrUoXx=
+e7Ra9ofQ2urY3kjLMYfLOThbsTCVoQVtyX-UfRnnA8z3H8DoR-KFnKarqWuJWu3L2EyxAMMsO3S=
+AwiCg9dDAhIDpVzOzaXdb_Xt3OvfBNbLd8bjtODQFzgnvTwA_nNRtuWAmt0VfrSeLqsfFqPurGH=
+hMaGkWMQRdi-_W_uQ0LIwZENIWhsg3OpqnliscnudTT_ZulcbeZLTyFXUbY7hcnQuh_8JT4gDv4=
+VG_Cy8_SGPBdjLKU3zeAbay_T2SSol4vKtpfcv3x3ZJNNRFmU-m9tWElvaUmWSFsuNbtj2cZ_nv=
+5h7g0SC79e5kDyz0gPDQRWnjLLxwQza2Wd2rzZQrz9ZGuPhf7vmWVI8o3VfMxslkM3kJAVCPjt0=
+y_PYr0th1LCVZaOfVhrNJbJyrBG8dkrVyqGYpxJEkqIl2sLDwVqLSGEpyfuVd-EBV2LhhoOzxny=
+Blrc8jwcj-ff1uc8hUbSGrwTAEsPFV5uDoEr3I-QNB63x05U3D7IHOy4LDVjv_744fUuff1A st=
+yle=3Dtext-decoration:none;><div class=3DtravelReengagementTemplatesFlights=
+BasePriceChange><div class=3D"price no-change" style=3D"white-space:nowrap;=
+ line-height:16px; padding-bottom:4px;"><span style=3D"color:#222; font-siz=
+e:16px; font-weight:700; white-space:nowrap; line-height:16px;">=E2=82=B13,=
+322</span></div></div></a></td></tr><tr class=3D"travelReengagementTemplate=
+sFlightsBaseFlight border-wrapper"><td class=3Dpadding-row style=3D"min-wid=
+th:20px; width:20px;"></td><td colspan=3D3 class=3Dborder style=3D"border-t=
+op:1px solid #e7e5e5; line-height:0;">=C2=A0</td></tr><tr class=3DtravelRee=
+ngagementTemplatesFlightsBaseFlight><td class=3Dpadding-row style=3D"min-wi=
+dth:20px; width:20px;"></td><td class=3Dairline-icon-container valign=3Dmid=
+dle style=3D"text-align:left; padding:18px 5px 18px 0; width:32px;"><a targ=
+et=3D_blank href=3Dhttps://notifications.google.com/g/p/ANiao5ogWx_B7XfPfhN=
+UlLTA03Ff8XX-pGTwL4w1HayVWEg1ydrxWXxNe3INkZcsxOGyNqZGSXGjRRIs1Ezh25NyxBibfP=
+nk0zf7HDt7e7ZFupOHAPu8xd2WfpClHT7Mq1tlHUF-Rt0oLGGPJy7gnfkF_cAD2y6rDh-5PZlf0=
+N2h84k8P38-oL14-MmLDOrOsbAJqNyJpyzKQxwqHnhPAEb9OdLlVFFQqxBg1mPqmH5vy3cjTsBs=
+82PNQvD7LBW_cPdpGmKVatOWVFdtVB2VqCqHqAJn0IWwRkDn3Nxf2Bg75qLVC1vzLtJUbc7AKCN=
+QQPsX0ohuzntimZKid8uglZcmwY-XwBlIHPUfECRFGklf-Lr0XBH04SAbqyNA0ZDt0PhIK6MJtP=
+BYLk1DQwIM7bVXkAH8NP2KQMIiiJ0ZNaixeMlYT6PWcHL5WlG6bBJQ7qaELKGqBZsMXeaUpLv4i=
+jyo5ft7Xs2lj58nImZvD9Xh7NlBv87UrKNbiA7sBo21gRTbKGYclCxkawbUN8aYYSAhkkunyZYx=
+nu_bGykqTC3U46usWDyj7vP8MR4dbfAL89t4eFO8iJQyTpBce-pFYXSnqNd2zAeaos_Vr26Bn_H=
+SKouOpyPvZx-AK-bpbCyXIn6jbtizFt8oNNQVnNOAn1RD_lymjlNyFECScFWAXgeYQJWs_5QqCW=
+SaSKEInz3BUgz3DKpl_sk5mA3u3sURAPcp6XCdYdm1Z-A1ieQOb9ahIzw><img alt=3D-1 src=
+=3Dhttps://www.gstatic.com/flights/airline_logos/70px/DG.png style=3D"heigh=
+t:35px; max-height:35px;"></a></td><td class=3Dflight-info style=3D"font-fa=
+mily:Roboto,Helvetica Neue,Arial,sans-serif; padding:18px 5px 18px 20px; li=
+ne-height:24px;"><a target=3D_blank href=3Dhttps://notifications.google.com=
+/g/p/ANiao5ogWx_B7XfPfhNUlLTA03Ff8XX-pGTwL4w1HayVWEg1ydrxWXxNe3INkZcsxOGyNq=
+ZGSXGjRRIs1Ezh25NyxBibfPnk0zf7HDt7e7ZFupOHAPu8xd2WfpClHT7Mq1tlHUF-Rt0oLGGPJ=
+y7gnfkF_cAD2y6rDh-5PZlf0N2h84k8P38-oL14-MmLDOrOsbAJqNyJpyzKQxwqHnhPAEb9OdLl=
+VFFQqxBg1mPqmH5vy3cjTsBs82PNQvD7LBW_cPdpGmKVatOWVFdtVB2VqCqHqAJn0IWwRkDn3Nx=
+f2Bg75qLVC1vzLtJUbc7AKCNQQPsX0ohuzntimZKid8uglZcmwY-XwBlIHPUfECRFGklf-Lr0XB=
+H04SAbqyNA0ZDt0PhIK6MJtPBYLk1DQwIM7bVXkAH8NP2KQMIiiJ0ZNaixeMlYT6PWcHL5WlG6b=
+BJQ7qaELKGqBZsMXeaUpLv4ijyo5ft7Xs2lj58nImZvD9Xh7NlBv87UrKNbiA7sBo21gRTbKGYc=
+lCxkawbUN8aYYSAhkkunyZYxnu_bGykqTC3U46usWDyj7vP8MR4dbfAL89t4eFO8iJQyTpBce-p=
+FYXSnqNd2zAeaos_Vr26Bn_HSKouOpyPvZx-AK-bpbCyXIn6jbtizFt8oNNQVnNOAn1RD_lymjl=
+NyFECScFWAXgeYQJWs_5QqCWSaSKEInz3BUgz3DKpl_sk5mA3u3sURAPcp6XCdYdm1Z-A1ieQOb=
+9ahIzw style=3Dtext-decoration:none;><div class=3Dtimes style=3D"font-size:=
+16px; color:#222; white-space:nowrap;">19:50 =E2=80=93 21:50<sup></sup></di=
+v><div class=3Dattributes style=3D"font-size:14px; color:#7f7f7f;"><span cl=
+ass=3Dattribute style=3Dwhite-space:nowrap;>Cebgo =C2=B7 </span><span class=
+=3Dattribute style=3Dwhite-space:nowrap;>Non-stop =C2=B7 </span><span class=
+=3Dattribute style=3Dwhite-space:nowrap;>CEB=E2=80=93MNL</span></div><div c=
+lass=3Dbaggage-info style=3D"font-size:11px; color:#7f7f7f;"></div></a></td=
+><td class=3Dprice-change-wrapper style=3D"font-family:Roboto,Helvetica Neu=
+e,Arial,sans-serif; font-size:14px; padding:26px 25px 18px 10px; text-align=
+:right; vertical-align:top; line-height:24px;"><a target=3D_blank href=3Dht=
+tps://notifications.google.com/g/p/ANiao5ogWx_B7XfPfhNUlLTA03Ff8XX-pGTwL4w1=
+HayVWEg1ydrxWXxNe3INkZcsxOGyNqZGSXGjRRIs1Ezh25NyxBibfPnk0zf7HDt7e7ZFupOHAPu=
+8xd2WfpClHT7Mq1tlHUF-Rt0oLGGPJy7gnfkF_cAD2y6rDh-5PZlf0N2h84k8P38-oL14-MmLDO=
+rOsbAJqNyJpyzKQxwqHnhPAEb9OdLlVFFQqxBg1mPqmH5vy3cjTsBs82PNQvD7LBW_cPdpGmKVa=
+tOWVFdtVB2VqCqHqAJn0IWwRkDn3Nxf2Bg75qLVC1vzLtJUbc7AKCNQQPsX0ohuzntimZKid8ug=
+lZcmwY-XwBlIHPUfECRFGklf-Lr0XBH04SAbqyNA0ZDt0PhIK6MJtPBYLk1DQwIM7bVXkAH8NP2=
+KQMIiiJ0ZNaixeMlYT6PWcHL5WlG6bBJQ7qaELKGqBZsMXeaUpLv4ijyo5ft7Xs2lj58nImZvD9=
+Xh7NlBv87UrKNbiA7sBo21gRTbKGYclCxkawbUN8aYYSAhkkunyZYxnu_bGykqTC3U46usWDyj7=
+vP8MR4dbfAL89t4eFO8iJQyTpBce-pFYXSnqNd2zAeaos_Vr26Bn_HSKouOpyPvZx-AK-bpbCyX=
+In6jbtizFt8oNNQVnNOAn1RD_lymjlNyFECScFWAXgeYQJWs_5QqCWSaSKEInz3BUgz3DKpl_sk=
+5mA3u3sURAPcp6XCdYdm1Z-A1ieQOb9ahIzw style=3Dtext-decoration:none;><div cla=
+ss=3DtravelReengagementTemplatesFlightsBasePriceChange><div class=3D"price =
+no-change" style=3D"white-space:nowrap; line-height:16px; padding-bottom:4p=
+x;"><span style=3D"color:#222; font-size:16px; font-weight:700; white-space=
+:nowrap; line-height:16px;">=E2=82=B13,927</span></div></div></a></td></tr>=
+<tr class=3D"travelReengagementTemplatesFlightsBaseFlight border-wrapper"><=
+td class=3Dpadding-row style=3D"min-width:20px; width:20px;"></td><td colsp=
+an=3D3 class=3Dborder style=3D"border-top:1px solid #e7e5e5; line-height:0;=
+">=C2=A0</td></tr><tr class=3DtravelReengagementTemplatesFlightsBaseFlight>=
+<td class=3Dpadding-row style=3D"min-width:20px; width:20px;"></td><td clas=
+s=3Dairline-icon-container valign=3Dmiddle style=3D"text-align:left; paddin=
+g:18px 5px 18px 0; width:32px;"><a target=3D_blank href=3Dhttps://notificat=
+ions.google.com/g/p/ANiao5rZoCLcuJ7RGLqwvte_-lcQ3pdFpgGpgxYoj5C36ncndN_218t=
+jwyiJ9blH1Cn9fT7yc7m8lYGlEAnD__W3Ey1ISxc3Badu7ft1jNjvErLPzhalgkoIvW8lGfn5c0=
+xJQQTY_ysYuFQdeRVpIlpeesZ7AStYq9idYhwxH3LOhxu8Il-wCdQ7zIlW-DcYB5MAkdPGRkmkL=
+Z6t5riXivD_jyyTXV5NySSxGhkvFdUKDJUR_1WBAwxMkKJtGBCCq-oiGVI2epN-_4g2B9BvOi72=
+rbeGdDlEtY4Bolg4CNYSEvRZmLPmka_h_XauckxNRCFj0d4WG9i5482dnCckGEey3ZTP3Gxh9bw=
+jBDUqvXSKNHdTh3328F54Ml99MkAjlFit7zMtZ4k3jUa4Rr1D1tIDz8sNHXjKqVXTACQGxoGwW4=
+M3vAgYfKEf304C7gWbOc4PXTHqerZMyObt8Ay-6FXCc7CVOBT8ZVtEvyJrLHxChQL9EGQcZd-zl=
+wCosdgKbf4bnV2df6uY5ly-jKhisRf22W0cenCNnI1NH3kENmq-Di6RMI2bneeAFIAlBMmtZZcK=
+aWjmIm6O3ZbbvFhexqbqRw749tRWjQ4v_pSfAQo00dthPfmgWiMnl79n9qWS8rTd5Kbd5u5sQxS=
+_FNxF9aYpMiI7FyrwgohzvN3WPxw4-W4zqi2cL4vFUc8th4fsJNd-7HEtgxHRRbBOG2eZ-c5FNR=
+w-nRmk3dOrCSOBljwscU0><img alt=3D-1 src=3Dhttps://www.gstatic.com/flights/a=
+irline_logos/70px/PR.png style=3D"height:35px; max-height:35px;"></a></td><=
+td class=3Dflight-info style=3D"font-family:Roboto,Helvetica Neue,Arial,san=
+s-serif; padding:18px 5px 18px 20px; line-height:24px;"><a target=3D_blank =
+href=3Dhttps://notifications.google.com/g/p/ANiao5rZoCLcuJ7RGLqwvte_-lcQ3pd=
+FpgGpgxYoj5C36ncndN_218tjwyiJ9blH1Cn9fT7yc7m8lYGlEAnD__W3Ey1ISxc3Badu7ft1jN=
+jvErLPzhalgkoIvW8lGfn5c0xJQQTY_ysYuFQdeRVpIlpeesZ7AStYq9idYhwxH3LOhxu8Il-wC=
+dQ7zIlW-DcYB5MAkdPGRkmkLZ6t5riXivD_jyyTXV5NySSxGhkvFdUKDJUR_1WBAwxMkKJtGBCC=
+q-oiGVI2epN-_4g2B9BvOi72rbeGdDlEtY4Bolg4CNYSEvRZmLPmka_h_XauckxNRCFj0d4WG9i=
+5482dnCckGEey3ZTP3Gxh9bwjBDUqvXSKNHdTh3328F54Ml99MkAjlFit7zMtZ4k3jUa4Rr1D1t=
+IDz8sNHXjKqVXTACQGxoGwW4M3vAgYfKEf304C7gWbOc4PXTHqerZMyObt8Ay-6FXCc7CVOBT8Z=
+VtEvyJrLHxChQL9EGQcZd-zlwCosdgKbf4bnV2df6uY5ly-jKhisRf22W0cenCNnI1NH3kENmq-=
+Di6RMI2bneeAFIAlBMmtZZcKaWjmIm6O3ZbbvFhexqbqRw749tRWjQ4v_pSfAQo00dthPfmgWiM=
+nl79n9qWS8rTd5Kbd5u5sQxS_FNxF9aYpMiI7FyrwgohzvN3WPxw4-W4zqi2cL4vFUc8th4fsJN=
+d-7HEtgxHRRbBOG2eZ-c5FNRw-nRmk3dOrCSOBljwscU0 style=3Dtext-decoration:none;=
+><div class=3Dtimes style=3D"font-size:16px; color:#222; white-space:nowrap=
+;">23:35 =E2=80=93 01:00<sup>+1</sup></div><div class=3Dattributes style=3D=
+"font-size:14px; color:#7f7f7f;"><span class=3Dattribute style=3Dwhite-spac=
+e:nowrap;>Philippine Airlines =C2=B7 </span><span class=3Dattribute style=
+=3Dwhite-space:nowrap;>Non-stop =C2=B7 </span><span class=3Dattribute style=
+=3Dwhite-space:nowrap;>CEB=E2=80=93MNL</span></div><div class=3Dbaggage-inf=
+o style=3D"font-size:11px; color:#7f7f7f;"></div></a></td><td class=3Dprice=
+-change-wrapper style=3D"font-family:Roboto,Helvetica Neue,Arial,sans-serif=
+; font-size:14px; padding:26px 25px 18px 10px; text-align:right; vertical-a=
+lign:top; line-height:24px;"><a target=3D_blank href=3Dhttps://notification=
+s.google.com/g/p/ANiao5rZoCLcuJ7RGLqwvte_-lcQ3pdFpgGpgxYoj5C36ncndN_218tjwy=
+iJ9blH1Cn9fT7yc7m8lYGlEAnD__W3Ey1ISxc3Badu7ft1jNjvErLPzhalgkoIvW8lGfn5c0xJQ=
+QTY_ysYuFQdeRVpIlpeesZ7AStYq9idYhwxH3LOhxu8Il-wCdQ7zIlW-DcYB5MAkdPGRkmkLZ6t=
+5riXivD_jyyTXV5NySSxGhkvFdUKDJUR_1WBAwxMkKJtGBCCq-oiGVI2epN-_4g2B9BvOi72rbe=
+GdDlEtY4Bolg4CNYSEvRZmLPmka_h_XauckxNRCFj0d4WG9i5482dnCckGEey3ZTP3Gxh9bwjBD=
+UqvXSKNHdTh3328F54Ml99MkAjlFit7zMtZ4k3jUa4Rr1D1tIDz8sNHXjKqVXTACQGxoGwW4M3v=
+AgYfKEf304C7gWbOc4PXTHqerZMyObt8Ay-6FXCc7CVOBT8ZVtEvyJrLHxChQL9EGQcZd-zlwCo=
+sdgKbf4bnV2df6uY5ly-jKhisRf22W0cenCNnI1NH3kENmq-Di6RMI2bneeAFIAlBMmtZZcKaWj=
+mIm6O3ZbbvFhexqbqRw749tRWjQ4v_pSfAQo00dthPfmgWiMnl79n9qWS8rTd5Kbd5u5sQxS_FN=
+xF9aYpMiI7FyrwgohzvN3WPxw4-W4zqi2cL4vFUc8th4fsJNd-7HEtgxHRRbBOG2eZ-c5FNRw-n=
+Rmk3dOrCSOBljwscU0 style=3Dtext-decoration:none;><div class=3DtravelReengag=
+ementTemplatesFlightsBasePriceChange><div class=3D"price no-change" style=
+=3D"white-space:nowrap; line-height:16px; padding-bottom:4px;"><span style=
+=3D"color:#222; font-size:16px; font-weight:700; white-space:nowrap; line-h=
+eight:16px;">=E2=82=B13,961</span></div></div></a></td></tr></tbody></table=
+></td></tr><tr class=3DtravelReengagementTemplatesFlightsBaseShowFlights><t=
+d class=3Dtop-border colspan=3D4 style=3D"border-top:1px solid #e7e5e5; lin=
+e-height:0;">=C2=A0</td></tr><tr class=3DtravelReengagementTemplatesFlights=
+BaseShowFlights><td class=3Dpadding-row style=3D"min-width:20px; width:20px=
+;"></td><td class=3Darrow-icon-container valign=3Dmiddle style=3D"text-alig=
+n:left; width:32px; vertical-align:middle; padding:18px 5px;"><a target=3D_=
+blank href=3Dhttps://notifications.google.com/g/p/ANiao5ofgd76nrzXLZZxn5-8N=
+tPywlguuw9RA_Kn542McUE0-oC387uZ4g43hhJiahdi8MZRP8HOF_r1FpPkWCYM2zZ5iw_uKbdw=
+XrZB-Tm4NrfO7B6toXowsrpAWSZlUmOXSbBPzwWGlQ_lEy5INpo-t4QMJFqlNUSLzjHK1KR6_RO=
+FS32ZAaopy1pP93gkpVXUYdPS6aiHculkEAgGY6_L5GXqcLp8H2pS4RZGUTgfz5q1V-lcoD6rEl=
+WcV77YN8QCjTRLAnHWPA9o3YA8T0JumzjnereVnSgm1Tsjt6RupkVMyTk8-yeNUL43pN9cF5eoU=
+AN9MnvFqWMSQvwMvJWc9Rscoleq5kcj0J12c6GX03E4OGFPoWE8QM28uDD5S2F_iik8HyEJB_ma=
+R93VgG-QuphcqGAnkZbNAHLVdlJuvF_azRKXLLn-Dqsv8yLO5TcCQC4i4ReRjtAEhMo0it75EvR=
+cUeRXVkEo6xZnsnnMc-XXebPz6vivNzY1lS-7q0wZae4QtzdRYREOoiltG6yccML4A_j0WZwoEG=
+_5RRvrrxgF1mRgJ9t9G-enZAQ1xurx_INDJGjIwvuXW7PHpr-S_R0GwRDrzz80Xi_ns12QPZ-9M=
+wq_fqKKYGdzEM7T8PFqwdYp-pw0TVfb1fMoLaYi_iqmNvU5CqR-C73SxjKyfqpaSQ><img alt=
+=3Dselect src=3Dhttps://www.gstatic.com/images/icons/material/system/2x/arr=
+ow_forward_black_24dp.png style=3D"height:24px; max-height:24px;"></a></td>=
+<td class=3Dmessage-container colspan=3D2 style=3D"font-family:Roboto,Helve=
+tica Neue,Arial,sans-serif; line-height:24px; margin:4px 0 14px; padding:18=
+px 20px;"><a target=3D_blank href=3Dhttps://notifications.google.com/g/p/AN=
+iao5ofgd76nrzXLZZxn5-8NtPywlguuw9RA_Kn542McUE0-oC387uZ4g43hhJiahdi8MZRP8HOF=
+_r1FpPkWCYM2zZ5iw_uKbdwXrZB-Tm4NrfO7B6toXowsrpAWSZlUmOXSbBPzwWGlQ_lEy5INpo-=
+t4QMJFqlNUSLzjHK1KR6_ROFS32ZAaopy1pP93gkpVXUYdPS6aiHculkEAgGY6_L5GXqcLp8H2p=
+S4RZGUTgfz5q1V-lcoD6rElWcV77YN8QCjTRLAnHWPA9o3YA8T0JumzjnereVnSgm1Tsjt6Rupk=
+VMyTk8-yeNUL43pN9cF5eoUAN9MnvFqWMSQvwMvJWc9Rscoleq5kcj0J12c6GX03E4OGFPoWE8Q=
+M28uDD5S2F_iik8HyEJB_maR93VgG-QuphcqGAnkZbNAHLVdlJuvF_azRKXLLn-Dqsv8yLO5TcC=
+QC4i4ReRjtAEhMo0it75EvRcUeRXVkEo6xZnsnnMc-XXebPz6vivNzY1lS-7q0wZae4QtzdRYRE=
+OoiltG6yccML4A_j0WZwoEG_5RRvrrxgF1mRgJ9t9G-enZAQ1xurx_INDJGjIwvuXW7PHpr-S_R=
+0GwRDrzz80Xi_ns12QPZ-9Mwq_fqKKYGdzEM7T8PFqwdYp-pw0TVfb1fMoLaYi_iqmNvU5CqR-C=
+73SxjKyfqpaSQ style=3Dtext-decoration:none;><div style=3D"font-size:16px; c=
+olor:#222;">Show more flights</div></a></td></tr></tbody></table></div><div=
+ class=3DtravelReengagementTemplatesFlightsBaseInfoFooter><div class=3Dsepa=
+rator style=3D"width:100%; border-bottom:1px solid #bdbdbd; margin-bottom:1=
+5px; margin-top: 50px;"></div><div class=3Dcontent-wrapper style=3D"max-wid=
+th:600px; width:100%; text-align:center; color:#7d7d7d;"><div class=3Dlast-=
+updated-wrapper style=3D"margin:10px 60px;"> Prices updated 19 September 20=
+24 at 04:36 GMT </div><div class=3Dexplanation style=3D"color:#7d7d7d; marg=
+in:10px 80px;">You have received this email because you signed up to receiv=
+e travel tips and price updates from Google Flights.</div><div class=3Dmana=
+ge-wrapper style=3D"margin:10px 50px;"><a class=3Dedit-alerts target=3D_bla=
+nk href=3Dhttps://notifications.google.com/g/p/ANiao5qbAIKUZvWsKjAOfAptC0tR=
+Ld4zfgzzKQqQOF0BPWL7z22llJjkfyUcSptUC5yckiWkfqy7T1O02CxP6LvjWJ-bjZNqdzqexk4=
+40r2W8VxlISCMsyUpxZVxswYwxwepzc8nBBH0R88d7iOkxIPv_MkA0ognEMTlJJPiLxWqZ8Gk45=
+9dlAlWw0f56QFEMm8wv205KIkqq_4ePHEMB6liKMNy5VU3LVoKI26rsS0lGW2Aq3aDQMp4Dz-tj=
+fMsPOUTbcf91fO5Tvxtwfa71oFzI_fPO4y4LA5E5I1hiEcWDY3fiXDPzuInsdGhp_FFATFpz24m=
+Hom2US_0RAxAt7zZp7ehcTIF4knwv-OUPQ><span style=3D"color:#4a90e2; text-decor=
+ation:underline; white-space:nowrap;">Manage price tracking</span></a><span=
+> =C2=B7 </span><a href=3Dhttps://notifications.google.com/g/optout/ANiao5q=
+dHQBGaFS1wjhpdn_DgCVO-o2sLzt76fr7cRloOk3ePSiJF2aQE-M3iKuizkJ3eZLVY4ZqIC2cNS=
+x8ewmf_qZIKZD4LzkbzbDprgVQU5rCpWHNcoZO8oFp_aFnLVGQycuFC-GT271ZvIWul6bDuZlNI=
+sKLw-aVO_5Cv7_lpJWwRHnloTcqY7UW1IEL_7ifhtHEathd0efdx5R9QH6i0BifDrGN9v3qdjYP=
+5iiOu7fziQLN-fxLkGKPJFzbrLDNn5_HspVt9cbdtqsIHCEB-O3N05oG4OppzAw5SGWwPW8?hl=
+=3Den-GB target=3D_blank><span class=3DtravelReengagementTemplatesFlightsBa=
+seUnsubscribeLinkContent style=3D"color:#4a90e2; text-decoration:underline;=
+ white-space:nowrap;">Unsubscribe from all Google Flights emails</span></a>=
+</div></div></div><div itemscope itemtype=3Dhttp://schema.org/EmailMessage>=
+<div itemprop=3DpotentialAction itemscope itemtype=3Dhttp://schema.org/View=
+Action><link itemprop=3Dtarget href=3Dhttps://notifications.google.com/g/p/=
+ANiao5r9kqJQqJZ7BsLTMydXxvhqPhr9opzjJ2FZN2I5NMrMy2wnyTctPEWwK4Y6v_-rWQ67MzA=
+spyr3mtJCaxesqMn03xF8TedspV8A7YOZ1BR_SfxVVwZD5GZH6c0UUUhtdWsaGrtx96jWn6VphD=
+WPY2zKDb048MQ5koca2yjUBf6KiedCxziZnYX0Dl50DAR-couyXLQRvblfe_nSjkbttvIfCxXrv=
+0ak--CBTSWrwAKhMXIzIBQ_hT2QNhgeUHjPah7UKU8faN-OfrSzk-d3ghd8LXWTU6SlRu-XAmP2=
+hnOImi8K6BT8StDl-tRQMbSQlol4HecUr3wtb16LqDxtoTkpTCJ1G8D_kPUMPhFW5hLjmSD46XD=
+RLwfx4vIDSVgEjcfBNY_3eJpWjSlQ3TP8j4-Ic1CYkMhjmBYLaDRgsQx3BaflF0ZX0dogxapiv4=
+d9bC78JV8twwnLC2HqcRsim2dZtUrEsoFWskX8jboAIVpiSVlEUahzF8EO7z-9xBga7JU0zYtfw=
+3U_TQT_PoI5e2Fwtzjz_6sGONL3Z_vShwwr4yKtJgsS4XV9r23P3XPLoS_-Jv1lADlGlwVyS5DN=
+qDybf6qr8W6QSDIW><meta itemprop=3Dname content=3D"Show flight"></div></div>=
+</td></tr></tbody></table></div></td></tr></tbody></table></td></tr><tr><td=
+ class=3Dfooter-container style=3D"color:#7d7d7d; font-size:10px; line-heig=
+ht:1.5; max-width:600px; text-align:left;"><br><div class=3DtravelReengagem=
+entTemplatesFlightsBaseFooter style=3D"font-size:10px; text-align:center;">=
+<div class=3Dseparator style=3D"width:100%; margin-bottom:25px; border-bott=
+om:1px solid #bdbdbd;"></div><img alt=3D"" class=3DCToWUd src=3Dhttps://www=
+.gstatic.com/travel-reengagement/googlelogo_light.png style=3D"margin:0; pa=
+dding:0; height:27px; width:84px; max-height:27px; max-width:84px;"><a styl=
+e=3D"text-decoration:none; color:#7d7d7d; font-family:Roboto,Helvetica Neue=
+,Arial,sans-serif;"><br><div style=3D"font-family: &#39;Google Sans&#39;, R=
+oboto, Arial, sans-serif; font_size: 14px; font_color:&#39;#7d7d7d&#39;; li=
+ne_height:16px;">
+   =20
+      <span style=3D"font-size:inherit; color:inherit; font-weight:inherit;=
+ line-height:inherit; font-family:inherit;">Google LLC<br>1600 Amphitheatre=
+ Parkway,<br>Mountain View, CA 94043</span>
+  =20
+  =20
+
+  </div></a></div></td></tr></tbody></table></td></tr></tbody></table><img =
+alt=3D"" height=3D1 width=3D3 src=3Dhttps://notifications.google.com/g/img/=
+ANiao5qiJj1jmiJv8EFUYRG6u3ELHS4d8SxmN3TkSLIdTkg5U8OVMpRJw2mHXLwr8Fl4Ajorj-o=
+WSjyOYNetorkbQBneAXpsdy4mXw5If8GSnDPCjDrxGZ3yU_fAytLEDx_KV4JRM6qkgdu_k1goS6=
+x1DKpH_GOhvmDo6sN4.gif></body></html>
+--000000000000ba170606227175ff--

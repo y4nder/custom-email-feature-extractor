@@ -1,0 +1,533 @@
+Delivered-To: lorenzolubguban@gmail.com
+Received: by 2002:a17:906:26d4:b0:a90:2e2:6528 with SMTP id u20csp1243196ejc;
+        Sun, 29 Sep 2024 02:17:27 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE88rNb5GIh0hgDOKt2q5hiKTL8mhRaNxZqc8XbfBhewg5LBRFAYa37xlJ68BUL95lNfLhC
+X-Received: by 2002:a05:620a:1a9c:b0:7a9:b9dc:1b72 with SMTP id af79cd13be357-7ae3783d1admr1431959085a.23.1727601447297;
+        Sun, 29 Sep 2024 02:17:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727601447; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ONIUzn+YPkK+tKyFXzEiEMmHJBdoDZNvgyuMrjT8p/5q0NY2h8NeqYXnFUlGprWedS
+         eh2gJvpThqkZ6mOsZqo9Iql08lavA1StzHYlrs9tm9/oWMPcoekB8QqL01VC3X0kWLT3
+         SsAu5bdaiLTu8jH0BchiU7V7D1x1EliqKCodyIhtednqv9kIaNy3DLrqVGoioIv99Yvp
+         fLvmsUB5d5Nw78fKbJb1siy5qWJ4qYqVCusl9EHfHIom4tCaViX3GZUUn8oDQpuo3nmK
+         eZu+4QHdzFrwQXVq9GBH9GzwIngwQsolgJbuIyTmlVwVi30VS2iTvCN5xXBSzBsAA9k+
+         xdZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:feedback-id:list-unsubscribe-post:list-unsubscribe:to
+         :reply-to:message-id:subject:date:from:dkim-signature:dkim-signature;
+        bh=zx4l+gSMTec08TcWVPCudHuJnh+1SN9E+AzBUBAaXKI=;
+        fh=XIY6o0NLlEyVDTDpidRVmUdHT3zyjXxEKUc7HzQeGME=;
+        b=Y6J5Vijmuqg8Ne/WdSdLQVNRNMGGZ0BZBHNwOTiONaKI9qWxqZ6zhpkDhr7X+9hsBq
+         zjIH0S4Aqdq+6Z/ACHMjLXbmDoTEsEkbNZKPWlfo5911vI5xoSPZ0JLP0dqe9B/Fq1Fs
+         S5GInMu740aGgzN3L/CxnxyE9Jsj0zswmB2+0GYICpT66Dco+2hHQF8OTAqKCjIl10Jr
+         Fodz8/k2wYCBKO17WR77iWJJQicp7tQf6RgHybgr4nsLbpuCkczVzVlcqlBv9CvpsgOd
+         zu5I0SmJNq8MMojD6/KM0s03V6+t4qGUuBQvkBVV82BNinLQF1lugJsfKUvzLB3fZudP
+         WWcw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ab.mtasv.net header.s=ab20231108 header.b=egi8VUVR;
+       dkim=pass header.i=@roadmap.sh header.s=20240129062513pm header.b=Qx6oIaBV;
+       spf=pass (google.com: domain of pm_bounces@pm-bounces.roadmap.sh designates 50.31.205.17 as permitted sender) smtp.mailfrom=pm_bounces@pm-bounces.roadmap.sh;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=roadmap.sh
+Return-Path: <pm_bounces@pm-bounces.roadmap.sh>
+Received: from mta17-ab1.mtasv.net (mta17-ab1.mtasv.net. [50.31.205.17])
+        by mx.google.com with ESMTPS id af79cd13be357-7ae378528b1si580447885a.390.2024.09.29.02.17.27
+        for <lorenzolubguban@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 29 Sep 2024 02:17:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pm_bounces@pm-bounces.roadmap.sh designates 50.31.205.17 as permitted sender) client-ip=50.31.205.17;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ab.mtasv.net header.s=ab20231108 header.b=egi8VUVR;
+       dkim=pass header.i=@roadmap.sh header.s=20240129062513pm header.b=Qx6oIaBV;
+       spf=pass (google.com: domain of pm_bounces@pm-bounces.roadmap.sh designates 50.31.205.17 as permitted sender) smtp.mailfrom=pm_bounces@pm-bounces.roadmap.sh;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=roadmap.sh
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=ab20231108; d=ab.mtasv.net;
+ h=From:Date:Subject:Message-Id:Reply-To:To:List-Unsubscribe:
+ List-Unsubscribe-Post:Feedback-ID:MIME-Version:Content-Type:Date:From:
+ Message-ID:Reply-To:Sender:Subject:To:CC; t=1727601447; x=1727687847;
+ bh=zx4l+gSMTec08TcWVPCudHuJnh+1SN9E+AzBUBAaXKI=;
+ b=egi8VUVRLOPgeVnXtivSy57OB5AoesnO2X6pPVbfKavv+a/ai5yGIKwQn05bjDc/CrOG4ZRwAjQK
+   p5V9P7pzaCHaK/6eVIShJkMHRDUGe0QnBmyokxAAedFXK1ev1f6p+AvgagxyLeXr1N0mwiOWn9S6
+   1sVimLy2b4t7gT/VS20=
+Received: by mta17-ab1.mtasv.net id hv4dic3864o8 for <lorenzolubguban@gmail.com>; Sun, 29 Sep 2024 05:17:26 -0400 (envelope-from <pm_bounces@pm-bounces.roadmap.sh>)
+X-PM-IP: 50.31.205.17
+X-IADB-IP: 50.31.205.17
+X-IADB-IP-REVERSE: 17.205.31.50
+DKIM-Signature: v=1; a=rsa-sha256; d=roadmap.sh; s=20240129062513pm;
+	c=relaxed/relaxed; i=newsletter@roadmap.sh; t=1727601446; x=1727774246;
+	h=date:date:from:from:message-id:reply-to:reply-to:sender:subject:subject:to:
+	to:cc:list-unsubscribe:list-unsubscribe-post:feedback-id:mime-version:
+	content-type;
+	bh=zx4l+gSMTec08TcWVPCudHuJnh+1SN9E+AzBUBAaXKI=;
+	b=Qx6oIaBV9fWBDvixyEdyfeLRX0y8ZhL2nmflhjCrU/sbjzzg8xe1amNC3H2gSElxfPjr0lyqm9i
+	8SN1XZ5gOYdMO8TXrYEXY3mBLuj5XCvknWf5GIlUkBs7+dp9AW1sUC2bGKdkALOG1SRm4QYn5POw3
+	IZHExk4L9Ma5oNlzets=
+From: "roadmap.sh" <newsletter@roadmap.sh>
+Date: Sun, 29 Sep 2024 09:17:26 +0000
+Subject: September in Review: Redis Roadmap, Frontend Projects, and More
+Message-Id: <ad82dea0-4d4c-43f2-a816-e8bfd56a16dc@mtasv.net>
+Reply-To: kamran@roadmap.sh
+To: lorenzolubguban@gmail.com
+List-Unsubscribe:
+ <https://subscriptions.pstmrk.it/unsubscribe?m=1.03tEcW7e7y-6z73dX8VKZg.1N_InGWD8i9txS7ikPYXzhRFsiIMJvJE3SDG3FliXwb0Rywqubfxxs3ONqZvR_Wf5OLVa9Sfakuxb3hhbPJBo2HdmeMoeeY5BFwdfS46JxWJ5uz7DuCUG2cn-L38_RYRwlQZhHvu-2wz_8ykls7KiIMHbkiqdX12Nu3d59vCb-GzjNKpbCBWOA3wPJUFPFKR88_LEipgyZV5uNPzhf9L8QB4oDSt6kJqqSI2Td5PBBm3qnHojr6S_bD8OO1GJSm3YrlsF_eVbsEMI5wQ3gp1bTLHbJY81uXR3ZjHzpMCL_LSDsQ3RbbZXRFaWnTDo2BDr9q55TVrCiAiq_kC3D3fykyraoq41VcX6KOicA59TgEZefigphCiRLsjraG23x_IeWl8ZTtgkV04z_vZbTpr6YG1m9gEkjJlRFC9dsPXp1aGC1VDc6AzsHB6Cd-bnGGJdTD4ViCqcbV8NllG00sI1eyEXWMLTH0wnv1e_JFCVOGUk7eDsJNgCXHUYlsxKKnrIzdE772S78XJeGjBaJ2AH4EYR5-HdZ5ZRd5Hef0fm46w8k65IhQiucD3lVtPf8Uz6PRX1cmP458oBCivJi9Bpr_CbxKOODyFeSrtv0D-KMqwF8noBUCk21K_Yb8kYNdlQFSaoX3RJZQuQUKXaH4nl6bk6Retd-Jr9NghuW30fU2rPNgGzii6YAGyadnY-1q6619xF-nABAONJ4iMmRfZcg>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: s12504117-_:s12504117:a312290:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: ad82dea0-4d4c-43f2-a816-e8bfd56a16dc
+X-PM-RCPT: |bTB8MzEyMjkwfDEyNTA0MTE3fGxvcmVuem9sdWJndWJhbkBnbWFpbC5jb20=|
+X-PM-Message-Options: v1;1.cFPJw6OsX6v6G7sMGk0eSg.kVZGy36HwLHeR6xARieeq1j6nrrfcKgeYB3-0OrcSMI-iE7FkVSy8PqcJozrVEVb9eDkUzsPVaS6z6VC3mJqvtweTsN-MCbRizTZ4exTfnCP3Q42Wimz4QNuqrOwpNxTVrfzu9gUVQtD3lwsdhGf34ylRNz4ecspXvaOuVZqIh64g5nhly7pKBWai7hxifWMgcFztua4f5ERGqpBf5fkgCr-f2whIkFCP4XX4EYxA2f6NmxTaKlDPHeL5hqxeilO2UTXFHDpiFF3pmr5zi0tzqQDyxptJoNw5-9V-CqEVs4
+MIME-Version: 1.0
+X-PM-MTA-Pool: application-bulk-2
+Content-Type: multipart/alternative;
+	boundary=mk3-d15dbdee95584ba9b10d3f3281b4d8a6; charset=UTF-8
+
+--mk3-d15dbdee95584ba9b10d3f3281b4d8a6
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello =F0=9F=91=8B
+
+Kamran again from roadmap.sh [https://roadmap.sh/] with an update on everyt=
+hing
+we have been working on over the past few weeks. We have a new roadmap for
+Redis, new and improved dashboard for users, frontend projects and more. Re=
+ad on
+to learn more.
+
+https://click.pstmrk.it/3ts/roadmap.sh%2Fredis/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c=
+-43f2-a816-e8bfd56a16dc/2/l-ImsJ94FD
+
+
+REDIS ROADMAP
+
+Redis is such a powerful tool. I have been using it for over a decade in va=
+rious
+use cases across almost every place I=E2=80=99ve worked at. It=E2=80=99s mu=
+ch more than just
+simple GET and SET. We just published a new detailed roadmap in collaborati=
+on
+with team at Redis to help you master Redis.
+
+Visit Redis Roadmap [https://roadmap.sh/redis]
+
+Content and resources will be added to the roadmap this week. Next up, we a=
+re
+working on new Data Engineer and ML Engineer roadmaps.
+
+
+FRONTEND PROJECT IDEAS
+
+Since the launch of backend project ideas [https://roadmap.sh/backend/proje=
+cts]
+last week, we have been gradually working on adding projects to more of our
+roadmaps. We have also launched project ideas for our Frontend roadmap. The=
+re
+are 18 project ideas with varying difficulty levels, each come with mockups=
+ and
+detailed requirements to get you started.
+
+Visit Frontend Project Ideas [https://roadmap.sh/frontend/projects]
+
+If you are learning frontend development, I would highly recommend you to s=
+tart
+solving them.
+
+
+DASHBOARD
+
+We have also launched a brand new dashboard for registered users, it makes =
+it
+easy for you to keep an eye on everything you have been learning and doing =
+on
+roadmap.sh [https://roadmap.sh/].
+
+https://click.pstmrk.it/3ts/roadmap.sh%2F/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2=
+-a816-e8bfd56a16dc/1/6OA-CUP76-
+
+This will be your new landing page once you login. You can still visit the =
+old
+homepage [https://roadmap.sh/home] as well.
+
+
+LEADERBOARD
+
+In our last newsletter we announched the launch of streaks to help you buil=
+d up
+your learning habits. We have launched a leaderboard page for projects and
+longest visit streaks. Check it out [https://roadmap.sh/leaderboard].
+
+https://click.pstmrk.it/3ts/roadmap.sh%2Fleaderboard/Ncy_/Lle4AQ/AQ/ad82dea=
+0-4d4c-43f2-a816-e8bfd56a16dc/6/qF83a22jAQ
+
+And last but not the least, we have added a changelog page at roadmap.sh
+[http://roadmap.sh/changelog] where we will be listing everything we have b=
+een
+doing from the content and functionality side.
+
+
+THANKS TO OUR SPONSORS
+
+Lastly, I would like to thank our sponsors for this newsletter; StormForge =
+and
+Apollo.
+
+Stop Setting K8s Requests
+
+Sponsor
+
+Let machine learning & automation do it for you. Try the first HPA-compatib=
+le
+vertical pod rightsizing solution. Start a free trial or play around in the
+sandbox environment. Try it now
+[https://app.stormforge.io/signup?utm_source=3DRoadmap&utm_medium=3Dnewslet=
+ter&utm_campaign=3DIMG-0924]
+
+[https://app.stormforge.io/signup?utm_source=3DRoadmap&utm_medium=3Dnewslet=
+ter&utm_campaign=3DIMG-0924]
+
+GraphQL Summit by Apollo
+
+Sponsor
+
+Don=E2=80=99t miss the premier conference for API platform teams happening =
+October 8-10
+in New York City! Learn from more than 50+ speakers including Zillow, Marri=
+ott,
+Wayfair and more. Register Now [https://bit.ly/3B4wa8D]
+
+[https://bit.ly/3B4wa8D]
+
+Do check them out if you are interested.
+
+
+ADVERTISE WITH US
+
+Get your brand in front of a thriving community on roadmap.sh. With hundred=
+s of
+thousands of visitors and over 1 million registered users, roadmap.sh is th=
+e
+go-to resource for developers seeking to skill up and advance their careers=
+.
+Don=E2=80=99t miss this opportunity to reach a dedicated audience=E2=80=94a=
+dvertise today! Learn
+more here [https://roadmap.sh/advertise].
+
+And that's all for this one. See you next time!
+Kamran
+
+2024 roadmap.sh [http://roadmap.sh/]
+7015 N. Kellogg Street, Portland, Oregon 97203, US
+
+Don't like these emails? https://subscriptions.pstmrk.it/unsubscribe?m=3D1.=
+03tEcW7e7y-6z73dX8VKZg.1N_InGWD8i9txS7ikPYXzhRFsiIMJvJE3SDG3FliXwb0Rywqubfx=
+xs3ONqZvR_Wf5OLVa9Sfakuxb3hhbPJBo2HdmeMoeeY5BFwdfS46JxWJ5uz7DuCUG2cn-L38_RY=
+RwlQZhHvu-2wz_8ykls7KiIMHbkiqdX12Nu3d59vCb-GzjNKpbCBWOA3wPJUFPFKR88_LEipgyZ=
+V5uNPzhf9L8QB4oDSt6kJqqSI2Td5PBBm3qnHojr6S_bD8OO1GJSm3YrlsF_eVbsEMI5wQ3gp1b=
+TLHbJY81uXR3ZjHzpMCL_LSDsQ3RbbZXRFaWnTDo2BDr9q55TVrCiAiq_kC3D3fykyraoq41VcX=
+6KOicA59TgEZefigphCiRLsjraG23x_IeWl8ZTtgkV04z_vZbTpr6YG1m9gEkjJlRFC9dsPXp1a=
+GC1VDc6AzsHB6Cd-bnGGJdTD4ViCqcbV8NllG00sI1eyEXWMLTH0wnv1e_JFCVOGUk7eDsJNgCX=
+HUYlsxKKnrIzdE772S78XJeGjBaJ2AH4EYR5-HdZ5ZRd5Hef0fm46w8k65IhQiucD3lVtPf8Uz6=
+PRX1cmP458oBCivJi9Bpr_CbxKOODyFeSrtv0D-KMqwF8noBUCk21K_Yb8kYNdlQFSaoX3RJZQu=
+QUKXaH4nl6bk6Retd-Jr9NghuW30fU2rPNgGzii6YAGyadnY-1q6619xF-nABAONJ4iMmRfZcg=
+
+--mk3-d15dbdee95584ba9b10d3f3281b4d8a6
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir=3D"ltr" lang=3D"en"=
+><head><meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-T=
+ype"/><style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      mso-font-alt: 'sans-serif';
+      src: url(https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3D3.1=
+9) format('woff2');
+    }
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+  </style><style>blockquote,h1,h2,h3,img,li,ol,p,ul{margin-top:0;margin-bot=
+tom:0}</style><meta content=3D"width=3Ddevice-width" name=3D"viewport"/><me=
+ta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible"/><meta name=3D"x-ap=
+ple-disable-message-reformatting"/><meta content=3D"telephone=3Dno,address=3D=
+no,email=3Dno,date=3Dno,url=3Dno" name=3D"format-detection"/><meta content=3D=
+"light" name=3D"color-scheme"/><meta content=3D"light" name=3D"supported-co=
+lor-schemes"/></head><body><div style=3D"display:none;overflow:hidden;line-=
+height:1px;opacity:0;max-height:0;max-width:0" id=3D"__react-email-preview"=
+>Project ideas for Frontend Developers are live. We have also launched a br=
+and new dashboard for users to keep an eye on what they have been learning.=
+<div>=C2=A0=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF</div></di=
+v><table align=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cel=
+lSpacing=3D"0" role=3D"presentation" style=3D"max-width:600px;min-width:300=
+px;width:100%;margin-left:auto;margin-right:auto;padding:0.5rem"><tbody><tr=
+ style=3D"width:100%"><td><table align=3D"center" width=3D"100%" border=3D"=
+0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"max-w=
+idth:37.5em;height:16px"><tbody><tr style=3D"width:100%"><td></td></tr></tb=
+ody></table><table align=3D"center" width=3D"100%" border=3D"0" cellPadding=
+=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"margin-top:0px;marg=
+in-bottom:32px"><tbody style=3D"width:100%"><tr style=3D"width:100%"><td al=
+ign=3D"left" data-id=3D"__react-email-column"><img title=3D"Logo" alt=3D"Lo=
+go" src=3D"https://roadmap.sh/images/brand.png" style=3D"display:block;outl=
+ine:none;border:none;text-decoration:none;width:40px;height:40px"/></td></t=
+r></tbody></table><p style=3D"font-size:15px;line-height:24px;margin:16px 0=
+;text-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-w=
+ebkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">Hello =F0=
+=9F=91=8B</p><p style=3D"font-size:15px;line-height:24px;margin:16px 0;text=
+-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-webkit=
+-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">Kamran again=
+ from <a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2F/Ncy_/Lle4AQ/AQ/ad=
+82dea0-4d4c-43f2-a816-e8bfd56a16dc/1/6OA-CUP76-" rel=3D"noopener noreferrer=
+ nofollow" style=3D"color:rgb(17, 24, 39);text-decoration:underline;font-we=
+ight:500" target=3D"_blank">roadmap.sh</a> with an update on everything we =
+have been working on over the past few weeks. We have a new roadmap for Red=
+is, new and improved dashboard for users, frontend projects and more. Read =
+on to learn more.</p><table align=3D"center" width=3D"100%" border=3D"0" ce=
+llPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"margin-top=
+:0px;margin-bottom:32px"><tbody style=3D"width:100%"><tr style=3D"width:100=
+%"><td align=3D"center" data-id=3D"__react-email-column"><a href=3D"https:/=
+/click.pstmrk.it/3s/roadmap.sh%2Fredis/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a8=
+16-e8bfd56a16dc/2/l-ImsJ94FD" rel=3D"noopener noreferrer" style=3D"display:=
+block;max-width:100%;text-decoration:none" target=3D"_blank"><img title=3D"=
+Image" alt=3D"Image" src=3D"https://assets.roadmap.sh/guest/redis-roadmap-u=
+pper.png" style=3D"display:block;outline:none;border:none;text-decoration:n=
+one;max-width:100%"/></a></td></tr></tbody></table><h3 style=3D"text-align:=
+left;color:rgb(17, 24, 39);margin-bottom:12px;margin-top:0px;font-size:24px=
+;line-height:38px;font-weight:600">Redis Roadmap</h3><p style=3D"font-size:=
+15px;line-height:24px;margin:16px 0;text-align:left;margin-bottom:20px;marg=
+in-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothing:antialiased;-moz-os=
+x-font-smoothing:grayscale">Redis is such a powerful tool. I have been usin=
+g it for over a decade in various use cases across almost every place I=E2=80=
+=99ve worked at. It=E2=80=99s much more than just simple <code style=3D"bac=
+kground-color:rgb(239, 239, 239);color:rgb(17, 24, 39);padding:2px 4px;bord=
+er-radius:6px;font-family:SFMono-Regular, Menlo, Monaco, Consolas, &quot;Li=
+beration Mono&quot;, &quot;Courier New&quot;, monospace;font-weight:400;let=
+ter-spacing:0">GET</code> and <code style=3D"background-color:rgb(239, 239,=
+ 239);color:rgb(17, 24, 39);padding:2px 4px;border-radius:6px;font-family:S=
+FMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;=
+Courier New&quot;, monospace;font-weight:400;letter-spacing:0">SET</code>. =
+We just published a new detailed roadmap in collaboration with team at Redi=
+s to help you master Redis.</p><table align=3D"center" width=3D"100%" borde=
+r=3D"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"=
+max-width:100%;text-align:left;margin-bottom:20px"><tbody><tr style=3D"widt=
+h:100%"><td><a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2Fredis/Ncy_/L=
+le4AQ/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/2/l-ImsJ94FD" style=3D"color:=
+rgb(255, 255, 255);background-color:rgb(0, 0, 0);border-color:rgb(0, 0, 0);=
+padding:12px 34px 12px 34px;border-width:2px;border-style:solid;text-decora=
+tion:none;font-size:14px;font-weight:500;border-radius:6px;line-height:100%=
+;display:inline-block;max-width:100%" target=3D"_blank"><span><!--[if mso]>=
+<i style=3D"letter-spacing: 34px;mso-font-width:-100%;mso-text-raise:18" hi=
+dden>&nbsp;</i><![endif]--></span><span style=3D"max-width:100%;display:inl=
+ine-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:9px">Visit Re=
+dis Roadmap</span><span><!--[if mso]><i style=3D"letter-spacing: 34px;mso-f=
+ont-width:-100%" hidden>&nbsp;</i><![endif]--></span></a></td></tr></tbody>=
+</table><p style=3D"font-size:15px;line-height:24px;margin:16px 0;text-alig=
+n:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-webkit-font=
+-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">Content and resou=
+rces will be added to the roadmap this week. Next up, we are working on new=
+ Data Engineer and ML Engineer roadmaps.</p><h3 style=3D"text-align:left;co=
+lor:rgb(17, 24, 39);margin-bottom:12px;margin-top:0px;font-size:24px;line-h=
+eight:38px;font-weight:600">Frontend Project Ideas</h3><p style=3D"font-siz=
+e:15px;line-height:24px;margin:16px 0;text-align:left;margin-bottom:20px;ma=
+rgin-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothing:antialiased;-moz-=
+osx-font-smoothing:grayscale">Since the launch of <a href=3D"https://click.=
+pstmrk.it/3s/roadmap.sh%2Fbackend%2Fprojects/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-4=
+3f2-a816-e8bfd56a16dc/3/7SNdhr4tif" rel=3D"noopener noreferrer nofollow" st=
+yle=3D"color:rgb(17, 24, 39);text-decoration:underline;font-weight:500" tar=
+get=3D"_blank">backend project ideas</a> last week, we have been gradually =
+working on adding projects to more of our roadmaps. We have also launched p=
+roject ideas for our Frontend roadmap. There are 18 project ideas with vary=
+ing difficulty levels, each come with mockups and detailed requirements to =
+get you started. </p><table align=3D"center" width=3D"100%" border=3D"0" ce=
+llPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"max-width:=
+100%;text-align:left;margin-bottom:20px"><tbody><tr style=3D"width:100%"><t=
+d><a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2Ffrontend%2Fprojects/Nc=
+y_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/4/PhoiwkNMHg" style=3D"co=
+lor:rgb(255, 255, 255);background-color:rgb(0, 0, 0);border-color:rgb(0, 0,=
+ 0);padding:12px 34px 12px 34px;border-width:2px;border-style:solid;text-de=
+coration:none;font-size:14px;font-weight:500;border-radius:6px;line-height:=
+100%;display:inline-block;max-width:100%" target=3D"_blank"><span><!--[if m=
+so]><i style=3D"letter-spacing: 34px;mso-font-width:-100%;mso-text-raise:18=
+" hidden>&nbsp;</i><![endif]--></span><span style=3D"max-width:100%;display=
+:inline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:9px">Visi=
+t Frontend Project Ideas</span><span><!--[if mso]><i style=3D"letter-spacin=
+g: 34px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]--></span></a></td>=
+</tr></tbody></table><p style=3D"font-size:15px;line-height:24px;margin:16p=
+x 0;text-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81)=
+;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">If y=
+ou are learning frontend development, I would highly recommend you to start=
+ solving them.</p><h3 style=3D"text-align:left;color:rgb(17, 24, 39);margin=
+-bottom:12px;margin-top:0px;font-size:24px;line-height:38px;font-weight:600=
+">Dashboard</h3><p style=3D"font-size:15px;line-height:24px;margin:16px 0;t=
+ext-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-web=
+kit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">We have a=
+lso launched a brand new dashboard for registered users, it makes it easy f=
+or you to keep an eye on everything you have been learning and doing on <a =
+href=3D"https://click.pstmrk.it/3s/roadmap.sh%2F/Ncy_/Lle4AQ/AQ/ad82dea0-4d=
+4c-43f2-a816-e8bfd56a16dc/1/6OA-CUP76-" rel=3D"noopener noreferrer nofollow=
+" style=3D"color:rgb(17, 24, 39);text-decoration:underline;font-weight:500"=
+ target=3D"_blank">roadmap.sh</a>.</p><table align=3D"center" width=3D"100%=
+" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" st=
+yle=3D"margin-top:0px;margin-bottom:32px"><tbody style=3D"width:100%"><tr s=
+tyle=3D"width:100%"><td align=3D"center" data-id=3D"__react-email-column"><=
+a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2F/Ncy_/Lle4AQ/AQ/ad82dea0-=
+4d4c-43f2-a816-e8bfd56a16dc/1/6OA-CUP76-" rel=3D"noopener noreferrer" style=
+=3D"display:block;max-width:100%;text-decoration:none" target=3D"_blank"><i=
+mg title=3D"Image" alt=3D"Image" src=3D"https://assets.roadmap.sh/guest/per=
+sonal-dashboard.png" style=3D"display:block;outline:none;border:none;text-d=
+ecoration:none;max-width:100%"/></a></td></tr></tbody></table><p style=3D"f=
+ont-size:15px;line-height:24px;margin:16px 0;text-align:left;margin-bottom:=
+20px;margin-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothing:antialiase=
+d;-moz-osx-font-smoothing:grayscale">This will be your new landing page onc=
+e you login. You can still visit  the <a href=3D"https://click.pstmrk.it/3s=
+/roadmap.sh%2Fhome/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/5/39=
+3FIvd8AA" rel=3D"noopener noreferrer nofollow" style=3D"color:rgb(17, 24, 3=
+9);text-decoration:underline;font-weight:500" target=3D"_blank">old homepag=
+e</a> as well.</p><h3 style=3D"text-align:left;color:rgb(17, 24, 39);margin=
+-bottom:12px;margin-top:0px;font-size:24px;line-height:38px;font-weight:600=
+">Leaderboard</h3><p style=3D"font-size:15px;line-height:24px;margin:16px 0=
+;text-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-w=
+ebkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">In our =
+last newsletter we announched the launch of streaks to help you build up yo=
+ur learning habits. We have launched a leaderboard page for projects and lo=
+ngest visit streaks. <a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2Flea=
+derboard/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/6/qF83a22jAQ" =
+rel=3D"noopener noreferrer nofollow" style=3D"color:rgb(17, 24, 39);text-de=
+coration:underline;font-weight:500" target=3D"_blank">Check it out</a>.</p>=
+<table align=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellS=
+pacing=3D"0" role=3D"presentation" style=3D"margin-top:0px;margin-bottom:32=
+px"><tbody style=3D"width:100%"><tr style=3D"width:100%"><td align=3D"cente=
+r" data-id=3D"__react-email-column"><a href=3D"https://click.pstmrk.it/3s/r=
+oadmap.sh%2Fleaderboard/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc=
+/6/qF83a22jAQ" rel=3D"noopener noreferrer" style=3D"display:block;max-width=
+:100%;text-decoration:none" target=3D"_blank"><img title=3D"Image" alt=3D"I=
+mage" src=3D"https://assets.roadmap.sh/guest/leaderboard-page.png" style=3D=
+"display:block;outline:none;border:none;text-decoration:none;max-width:100%=
+"/></a></td></tr></tbody></table><p style=3D"font-size:15px;line-height:24p=
+x;margin:16px 0;text-align:left;margin-bottom:20px;margin-top:0px;color:rgb=
+(55, 65, 81);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale">And last but not the least, we have added a <a href=3D"https://clic=
+k.pstmrk.it/3/roadmap.sh%2Fchangelog/Ncy_/Lle4AQ/AQ/ad82dea0-4d4c-43f2-a816=
+-e8bfd56a16dc/7/m9doYPM7qr" rel=3D"noopener noreferrer nofollow" style=3D"c=
+olor:rgb(17, 24, 39);text-decoration:underline;font-weight:500" target=3D"_=
+blank">changelog page at roadmap.sh</a> where we will be listing everything=
+ we have been doing from the content and functionality side.</p><h3 style=3D=
+"text-align:left;color:rgb(17, 24, 39);margin-bottom:12px;margin-top:0px;fo=
+nt-size:24px;line-height:38px;font-weight:600">Thanks to our Sponsors</h3><=
+p style=3D"font-size:15px;line-height:24px;margin:16px 0;text-align:left;ma=
+rgin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">Lastly, I would like to th=
+ank our sponsors for this newsletter; StormForge and Apollo.</p><a href=3D"=
+https://click.pstmrk.it/3s/app.stormforge.io%2Fsignup%3Futm_source%3DRoadma=
+p%26utm_medium%3Dnewsletter%26utm_campaign%3DIMG-0924/Ncy_/Lle4AQ/AQ/ad82de=
+a0-4d4c-43f2-a816-e8bfd56a16dc/8/NVStefBZDY" rel=3D"noopener noreferrer" st=
+yle=3D"border:1px solid #eaeaea;border-radius:10px;text-decoration:none;col=
+or:inherit;display:block;margin-bottom:20px" target=3D"_blank"><table align=
+=3D"center" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0"=
+ role=3D"presentation" style=3D"padding:15px;margin-top:0;margin-bottom:0">=
+<tbody style=3D"width:100%"><tr style=3D"width:100%"><td data-id=3D"__react=
+-email-column" style=3D"vertical-align:top"><table width=3D"auto" border=3D=
+"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"marg=
+in-bottom:8px;margin-top:0px"><tbody style=3D"width:100%"><tr style=3D"widt=
+h:100%"><td data-id=3D"__react-email-column"><p style=3D"font-size:18px;lin=
+e-height:24px;margin:0px;font-weight:600;color:rgb(17, 24, 39);-webkit-font=
+-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">Stop Setting K8s =
+Requests</p></td><td data-id=3D"__react-email-column" style=3D"padding-left=
+:6px;vertical-align:middle"><span style=3D"font-weight:600;color:rgb(17, 24=
+, 39);padding:4px 8px;border-radius:8px;background-color:rgb(254, 240, 138)=
+;font-size:12px;line-height:12px">Sponsor</span> </td></tr></tbody></table>=
+<p style=3D"font-size:16px;line-height:24px;margin:16px 0;color:rgb(107, 11=
+4, 128);margin-top:0px;margin-bottom:0px;-webkit-font-smoothing:antialiased=
+;-moz-osx-font-smoothing:grayscale">Let machine learning &amp; automation d=
+o it for you. Try the first HPA-compatible vertical pod rightsizing solutio=
+n. Start a free trial or play around in the sandbox environment.<!-- --> <a=
+ href=3D"https://click.pstmrk.it/3s/app.stormforge.io%2Fsignup%3Futm_source=
+%3DRoadmap%26utm_medium%3Dnewsletter%26utm_campaign%3DIMG-0924/Ncy_/Lle4AQ/=
+AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/8/NVStefBZDY" rel=3D"noopener noref=
+errer" style=3D"color:rgb(17, 24, 39);font-size:14px;font-weight:600;text-d=
+ecoration:underline">Try it now</a></p></td></tr></tbody></table></a><a hre=
+f=3D"https://click.pstmrk.it/3s/bit.ly%2F3B4wa8D/Ncy_/Lle4AQ/AQ/ad82dea0-4d=
+4c-43f2-a816-e8bfd56a16dc/9/T30xED82h6" rel=3D"noopener noreferrer" style=3D=
+"border:1px solid #eaeaea;border-radius:10px;text-decoration:none;color:inh=
+erit;display:block;margin-bottom:20px" target=3D"_blank"><table align=3D"ce=
+nter" width=3D"100%" border=3D"0" cellPadding=3D"0" cellSpacing=3D"0" role=3D=
+"presentation" style=3D"padding:15px;margin-top:0;margin-bottom:0"><tbody s=
+tyle=3D"width:100%"><tr style=3D"width:100%"><td data-id=3D"__react-email-c=
+olumn" style=3D"vertical-align:top"><table width=3D"auto" border=3D"0" cell=
+Padding=3D"0" cellSpacing=3D"0" role=3D"presentation" style=3D"margin-botto=
+m:8px;margin-top:0px"><tbody style=3D"width:100%"><tr style=3D"width:100%">=
+<td data-id=3D"__react-email-column"><p style=3D"font-size:18px;line-height=
+:24px;margin:0px;font-weight:600;color:rgb(17, 24, 39);-webkit-font-smoothi=
+ng:antialiased;-moz-osx-font-smoothing:grayscale">GraphQL Summit by Apollo<=
+/p></td><td data-id=3D"__react-email-column" style=3D"padding-left:6px;vert=
+ical-align:middle"><span style=3D"font-weight:600;color:rgb(17, 24, 39);pad=
+ding:4px 8px;border-radius:8px;background-color:rgb(254, 240, 138);font-siz=
+e:12px;line-height:12px">Sponsor</span> </td></tr></tbody></table><p style=3D=
+"font-size:16px;line-height:24px;margin:16px 0;color:rgb(107, 114, 128);mar=
+gin-top:0px;margin-bottom:0px;-webkit-font-smoothing:antialiased;-moz-osx-f=
+ont-smoothing:grayscale">Don=E2=80=99t miss the premier conference for API =
+platform teams happening October 8-10 in New York City! Learn from more tha=
+n 50+ speakers including Zillow, Marriott, Wayfair and more.<!-- --> <a hre=
+f=3D"https://click.pstmrk.it/3s/bit.ly%2F3B4wa8D/Ncy_/Lle4AQ/AQ/ad82dea0-4d=
+4c-43f2-a816-e8bfd56a16dc/9/T30xED82h6" rel=3D"noopener noreferrer" style=3D=
+"color:rgb(17, 24, 39);font-size:14px;font-weight:600;text-decoration:under=
+line">Register Now</a></p></td></tr></tbody></table></a><p style=3D"font-si=
+ze:15px;line-height:24px;margin:16px 0;text-align:left;margin-bottom:20px;m=
+argin-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothing:antialiased;-moz=
+-osx-font-smoothing:grayscale">Do check them out if you are interested.</p>=
+<h3 style=3D"text-align:left;color:rgb(17, 24, 39);margin-bottom:12px;margi=
+n-top:0px;font-size:24px;line-height:38px;font-weight:600">Advertise with U=
+s</h3><p style=3D"font-size:15px;line-height:24px;margin:16px 0;text-align:=
+left;margin-bottom:20px;margin-top:0px;color:rgb(55, 65, 81);-webkit-font-s=
+moothing:antialiased;-moz-osx-font-smoothing:grayscale">Get your brand in f=
+ront of a thriving community on roadmap.sh. With hundreds of thousands of v=
+isitors and over 1 million registered users, roadmap.sh is the go-to resour=
+ce for developers seeking to skill up and advance their careers. Don=E2=80=99=
+t miss this opportunity to reach a dedicated audience=E2=80=94advertise tod=
+ay! <a href=3D"https://click.pstmrk.it/3s/roadmap.sh%2Fadvertise/Ncy_/Lle4A=
+Q/AQ/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/10/lhCe6ZARGP" rel=3D"noopener no=
+referrer nofollow" style=3D"color:rgb(17, 24, 39);text-decoration:underline=
+;font-weight:500" target=3D"_blank">Learn more here</a>.</p><p style=3D"fon=
+t-size:15px;line-height:24px;margin:16px 0;text-align:left;margin-bottom:20=
+px;margin-top:0px;color:rgb(55, 65, 81);-webkit-font-smoothing:antialiased;=
+-moz-osx-font-smoothing:grayscale">And that&#x27;s all for this one. See yo=
+u next time!<br/>Kamran</p><p style=3D"font-size:14px;line-height:24px;marg=
+in:16px 0;color:rgb(100, 116, 139);margin-top:0px;margin-bottom:20px;text-a=
+lign:left;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:graysc=
+ale">2024 <a href=3D"https://click.pstmrk.it/3/roadmap.sh%2F/Ncy_/Lle4AQ/AQ=
+/ad82dea0-4d4c-43f2-a816-e8bfd56a16dc/11/HgX7UIzO7K" rel=3D"noopener norefe=
+rrer nofollow" style=3D"color:rgb(17, 24, 39);text-decoration:underline;fon=
+t-weight:500" target=3D"_blank">roadmap.sh</a><br/>7015 N. Kellogg Street, =
+Portland, Oregon 97203, US</p><p style=3D"font-size:15px;line-height:24px;m=
+argin:16px 0;text-align:left;margin-bottom:20px;margin-top:0px;color:rgb(55=
+, 65, 81);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:graysc=
+ale">Don&#x27;t like these emails? <!-- --><a href=3D"https://subscriptions=
+.pstmrk.it/unsubscribe?m=3D1.03tEcW7e7y-6z73dX8VKZg.1N_InGWD8i9txS7ikPYXzhR=
+FsiIMJvJE3SDG3FliXwb0Rywqubfxxs3ONqZvR_Wf5OLVa9Sfakuxb3hhbPJBo2HdmeMoeeY5BF=
+wdfS46JxWJ5uz7DuCUG2cn-L38_RYRwlQZhHvu-2wz_8ykls7KiIMHbkiqdX12Nu3d59vCb-Gzj=
+NKpbCBWOA3wPJUFPFKR88_LEipgyZV5uNPzhf9L8QB4oDSt6kJqqSI2Td5PBBm3qnHojr6S_bD8=
+OO1GJSm3YrlsF_eVbsEMI5wQ3gp1bTLHbJY81uXR3ZjHzpMCL_LSDsQ3RbbZXRFaWnTDo2BDr9q=
+55TVrCiAiq_kC3D3fykyraoq41VcX6KOicA59TgEZefigphCiRLsjraG23x_IeWl8ZTtgkV04z_=
+vZbTpr6YG1m9gEkjJlRFC9dsPXp1aGC1VDc6AzsHB6Cd-bnGGJdTD4ViCqcbV8NllG00sI1eyEX=
+WMLTH0wnv1e_JFCVOGUk7eDsJNgCXHUYlsxKKnrIzdE772S78XJeGjBaJ2AH4EYR5-HdZ5ZRd5H=
+ef0fm46w8k65IhQiucD3lVtPf8Uz6PRX1cmP458oBCivJi9Bpr_CbxKOODyFeSrtv0D-KMqwF8n=
+oBUCk21K_Yb8kYNdlQFSaoX3RJZQuQUKXaH4nl6bk6Retd-Jr9NghuW30fU2rPNgGzii6YAGyad=
+nY-1q6619xF-nABAONJ4iMmRfZcg" style=3D"color:#A8AAAF;font-family:Helvetica,=
+Arial,sans-serif;font-size:12px;">Unsubscribe</a><!-- --> </p></td></tr></t=
+body></table><img src=3D"https://ea.pstmrk.it/open?m=3Dv3_1.9LoM3fgtDmO2gAu=
+Dd7RFBA.CpjUJWQ_uvHBg24Ko977np4bRmbSx9GfwjsMOxY_SsnxzdddHbr6zTzwvVcuZFcnmx7=
+SJSr0oan4dqMRTkUyGKeGVZpG3HGYjvYV1j6BMQ0XN5QbXuuGyCTZzsWO278FH1NEnxYkQAcdSa=
+UMhUiEHOnjfUk8eruFm0-fgPYttuDhhniZ5gFrO7np9cvRqo7bVIOT7eiVFAi1z6Wgr9I4G8sa_=
+CMioxVIziirMgZUdtfmiEB3VL56Y_B3qvT__CaILqDswESqZP0jZwI8cGf_jh6xlfbdEJkHJizj=
+Q1056cU3Ka1ikqpuuXp-r6otMk4NIjqrwCpudjgwb-8aDjfvSpTIwA08GpkBi-umdcTq4GF-pXc=
+3563Fcv1wxGEpiShgMMkVfdvkO60mDWe0V5OostCRTKVV61mPOH4NFdEarz2XMk3t-kzWc8A5b9=
+KbNsv5qWS3yG9DSdVG2uRsOQZTM0JfUjpD4fWIgMCZxJomD6J3RLWstd7OWR4m3IJO-CgJkpfOt=
+liqCZG7qC6GbrhBqeOsNYMYEJKtigwsTTRM5f8Nzx5SjEWjqVtAO13KYHAsOnj25knLXgmb_Ffw=
+wyYFDBYTMVETw1WRLS3BwuXquHPbF9S7PluZGNIjoIcCkVMrR-SDMePHDscAO_0jwdxhwTHY0wT=
+054bGoJIpOjfxxrg" width=3D"1" height=3D"1" border=3D"0" alt=3D"" /></body><=
+/html>=
+
+--mk3-d15dbdee95584ba9b10d3f3281b4d8a6--
