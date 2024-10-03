@@ -1,0 +1,372 @@
+Delivered-To: lorenzolubguban@gmail.com
+Received: by 2002:a17:906:49a:b0:a90:2e2:6528 with SMTP id f26csp197025eja;
+        Thu, 3 Oct 2024 01:30:26 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHajkwdjy4lRfL2Kn0XZqN5fPXTVgL8ctiFOI29r3oSxRjkoFhDkVBzHA4Pb69Z9VP7zTx8
+X-Received: by 2002:a17:902:fb83:b0:20b:bf17:e497 with SMTP id d9443c01a7336-20bc5a66254mr63989505ad.46.1727944225647;
+        Thu, 03 Oct 2024 01:30:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727944225; cv=none;
+        d=google.com; s=arc-20240605;
+        b=W5kYPpRGx3mfa+SF39045viB/1JSnsxIN8UxE/8UOaNPa0LsIXEnUZRJ5g/5gibVsV
+         UT9kj2n5Z8CJ6SSVF2tbxGT8mrOXzylKPnA3NyjnymrLHGLIkHtmILCbxxPM+IHpiTCm
+         SUGR1kPxYuksbX7NbU/uhQsx1U0jvBZ/mysjXqsYg3xnGvwJqskI0jEpSwfDhH52mmFA
+         PzGQXQfrcWeqnvlolOdsDz2zDU6lFkoq4LFk5AnZBdvJ7bB9irsHFXEPmZtp3G+lX2nk
+         eYd33xRelbUSvu69zMturVhbugL0NhXl5Z/luV7l4T9cxXvJlx0XmZuJzHCegpNV7Aom
+         Dk8w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:list-unsubscribe:list-unsubscribe-post
+         :mime-version:subject:to:from:date:dkim-signature:dkim-signature;
+        bh=vaiY9idTTqZTt3evhN3WTkkRNp0JnWuif8vQe7ANMVw=;
+        fh=XIY6o0NLlEyVDTDpidRVmUdHT3zyjXxEKUc7HzQeGME=;
+        b=KpNJyw+4B9co0d+XtnUw+F9eZe1aJCdD+jVz76XBXprHZb9roHpD2m+pG+s6vXg+Wg
+         CW/YVqv/XfCk9M6X9qy2RK+I+mkx3F1CcLTW6urOuQjb00AqjxKyVufNRnBepuCJpdez
+         uhMitfKaaywxqp5C9aserfjRmYu6QmSF/qNbYNrrtmO/c4fUlUybl6FiDcRKar6elFD6
+         JypowhLYwstFlw2QCfZvqFjvl5LMf5TP743FNPCmN2oSZXojPlnkhQTev93yNEmLYDsJ
+         Rp96ZcaV/7O9cAAEaqdxK29mzcAMUT0e6lz9Jua8ujjZWEG0nSzsu5tkdXUPjRlqirsb
+         rymg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@geeksforgeeks.org header.s=vbkcpt5oltuwfu74jemwdidlf5e7ffgm header.b=SbaCwWQx;
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b=rwXwmpC4;
+       spf=pass (google.com: domain of 0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com designates 54.240.116.12 as permitted sender) smtp.mailfrom=0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=geeksforgeeks.org
+Return-Path: <0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com>
+Received: from a116-12.smtp-out.us-west-2.amazonses.com (a116-12.smtp-out.us-west-2.amazonses.com. [54.240.116.12])
+        by mx.google.com with ESMTPS id d9443c01a7336-20bed0dcf09si8474265ad.231.2024.10.03.01.30.25
+        for <lorenzolubguban@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 03 Oct 2024 01:30:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com designates 54.240.116.12 as permitted sender) client-ip=54.240.116.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@geeksforgeeks.org header.s=vbkcpt5oltuwfu74jemwdidlf5e7ffgm header.b=SbaCwWQx;
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b=rwXwmpC4;
+       spf=pass (google.com: domain of 0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com designates 54.240.116.12 as permitted sender) smtp.mailfrom=0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=geeksforgeeks.org
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=vbkcpt5oltuwfu74jemwdidlf5e7ffgm; d=geeksforgeeks.org;
+	t=1727944225;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Message-ID;
+	bh=wTJ0Djkrpg3dvRU13O4RZ74/cOCt1KYM9Ey4NFbRgMo=;
+	b=SbaCwWQxLYhmBs+fTcxxtpOVbaVFCdOikQGwiVqIKWMLV57IBk7SickcvCgsj/lB
+	RgV/YEbNktQAgwBLRmf3qlF3EtrsscNLvxo8nnuYNl9jZZHQSE/WdnTUhgadwcasNEq
+	c5KtyAzzhB0KwbuK09eEBl369Fjdf/yxyvoG7i0E=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=7v7vs6w47njt4pimodk5mmttbegzsi6n; d=amazonses.com; t=1727944225;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Message-ID:Feedback-ID;
+	bh=wTJ0Djkrpg3dvRU13O4RZ74/cOCt1KYM9Ey4NFbRgMo=;
+	b=rwXwmpC4DdGCfM+UA1mVLHhKmM7PVU+GoDErzVR2skjQ+yQdAmIYwHxHxNlWYYyM
+	VZW5nfT1CIqGDKNPr0Fdy/5lv5gB+UmyCztzm9nM6b3NembzYAZss/IM+YM911z6j4R
+	SoHL19Y+L5s0v5isPexuOqM7cOgS5LEORwE1XJgo=
+Date: Thu, 3 Oct 2024 08:30:25 +0000
+From: GeeksforGeeks <no-reply@geeksforgeeks.org>
+To: lorenzolubguban@gmail.com
+Subject: GfG Weekly [Rated] #175 this Sunday!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_5547171_748018003.1727944225162"
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://notificationsapi.geeksforgeeks.org/track-logs/email?6jnJFoZp=6DbUHII%3D&%2FyjcHIJYiHk%3D=vGKNR98%3D&7jfcFoVYiHk%3D=uWmJTA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=uWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2BHa4%3D=uw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=uWqE&%2FinYDbZuhQ%3D%3D=umqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=uw%3D%3D&%2BD%2FTC7ZjgGmE=uWqPS8Q20TDReA%3D%3D>
+Message-ID: <0101019251807162-f640aa66-cf06-43f4-86d4-b4296586c08d-000000@us-west-2.amazonses.com>
+Feedback-ID: ::1.us-west-2./TBjKWUgPnMTk3cvFInNvq1o9VXc945X17xQ0jWk78c=:AmazonSES
+X-SES-Outgoing: 2024.10.03-54.240.116.12
+
+------=_Part_5547171_748018003.1727944225162
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+
+
+
+
+
+
+
+=C2=A0
+
+
+
+
+ =20
+
+
+
+
+
+
+Hi yander - Your chance to top the leaderboard is here! We=E2=80=99ve just =
+reset it for the first contest of the month, so now=E2=80=99s your time to =
+shine! So, join GfG Weekly Coding Contest #175 [Rated Contest] to sharpen y=
+our DSA skills and excel in your career!Why should you join?
+
+Improve your DSA by solving top tech interview problems=20
+Compete with the best and see where you rank among top coders
+Earn weekly from a pool of 3500+ GeekBits and redeem them for exciting rewa=
+rds=20
+
+Don=E2=80=99t let this opportunity slip by=E2=80=94practice, compete, and w=
+in big!
+
+
+ =C2=A0=C2=A0=C2=A0=C2=A0 Register Now =C2=A0=C2=A0=C2=A0=C2=A0=20
+
+
+Participate every Sunday at 7 PM to top the overall leaderboard!=C2=A0
+
+
+
+=C2=A0
+
+
+
+
+
+
+
+
+=C2=A0
+              =20
+
+
+
+
+
+
+Write to us: feedback@geeksforgeeks.orgCoding is not my cup of tea. so I'll=
+ Unsubscribe =20
+
+
+
+
+
+
+
+
+------=_Part_5547171_748018003.1727944225162
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta charset=3D"utf-8"/>
+<meta content=3D"width=3Ddevice-width" name=3D"viewport"/>
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible"/>
+<style type=3D"text/css">
+      html,
+      body {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      div[style*=3D"margin: 16px 0"] {
+        margin:0 !important;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        Margin: 0 auto !important;
+      }
+      table table table {
+        table-layout: auto;
+      }
+      img {
+        -ms-interpolation-mode:bicubic;
+      }
+      .mobile-link--footer a,
+      a[x-apple-data-detectors] {
+        color:inherit !important;
+        text-decoration: underline !important;
+      }
+    </style>
+<style>
+      .button-td,
+      .button-a {
+        transition: all 100ms ease-in;
+      }
+      .button-td:hover,
+      .button-a:hover {
+        background: #555555 !important;
+        border-color: #555555 !important;
+      }
+    </style>
+</head>
+<body bgcolor=3D"#fffff" style=3D"Margin: 0;" width=3D"100%">
+<center style=3D"width: 100%; background: #fffff;"><!-- Visually Hidden Pre=
+header Text : BEGIN -->
+<div style=3D"display: none; font-size: 1px; line-height: 1px; max-height: =
+0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-fami=
+ly: sans-serif;">=C2=A0</div>
+<div style=3D"max-width: 600px; margin: auto;"><br/>
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"max-width: 600px;" width=3D"100%">
+<tbody>
+<tr>
+<td><a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/email?=
+6jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKMT9w%3D&7jfcFoVYiHk%3D=3DuWmJTA=
+%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%=
+2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3Dum=
+qKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20=
+TDReA%3D%3D"> <img align=3D"center" alt=3D"" border=3D"0" height=3D"" src=
+=3D"https://media.geeksforgeeks.org/notifications/Gfgweekly175-202410031207=
+23.png" style=3D"width: 100%; max-width: 600px;" width=3D"600"/> </a></td>
+</tr>
+<tr>
+<td>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"padding: 20px; font-family: 'Open Sans', Verdana, Arial, sans-=
+serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color:=
+ #555555;"><strong>Hi yander </strong>- Your chance to top the leaderboard =
+is here! We=E2=80=99ve just reset it for the first contest of the month, so=
+ now=E2=80=99s your time to shine! <br/><br/>So, join <strong>GfG Weekly Co=
+ding Contest #175 [Rated Contest]</strong> to sharpen your DSA skills and e=
+xcel in your career!<br/><br/>Why should you join?
+<ul>
+<li><strong>Improve your DSA by solving top tech interview problems </stron=
+g></li>
+<li><strong>Compete with the best and see where you rank among top coders</=
+strong></li>
+<li><strong>Earn weekly from a pool of 3500+ GeekBits and redeem them for e=
+xciting rewards </strong></li>
+</ul>
+Don=E2=80=99t let this opportunity slip by=E2=80=94<em>practice, compete, a=
+nd win big!</em></td>
+</tr>
+<tr>
+<td class=3D"" style=3D"border-radius: 3px; text-align: center;"><a class=
+=3D"button-a" href=3D"https://notificationsapi.geeksforgeeks.org/track-logs=
+/email?6jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKMT9w%3D&7jfcFoVYiHk%3D=
+=3DuWmJTA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHO=
+CLvr9M8h%2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3=
+D%3D=3DumqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3D=
+uWqPS8Q20TDReA%3D%3D" style=3D"background: #ADD8E6; border: 15px solid #ADD=
+8E6; font-family: 'Open Sans', Verdana, Arial, sans-serif; font-size: 13px;=
+ line-height: 2.5; text-align: center; text-decoration: none; border-radius=
+: 93px; font-weight: bold;"> =C2=A0=C2=A0=C2=A0=C2=A0 <span style=3D"color:=
+ #000000;">Register Now </span>=C2=A0=C2=A0=C2=A0=C2=A0 </a></td>
+</tr>
+<tr>
+<td style=3D"padding: 10px; font-family: 'Open Sans', Verdana, Arial, sans-=
+serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color:=
+ #555555; text-align: center;"><br/><em>Participate every Sunday at 7 PM to=
+ top the overall leaderboard!</em>=C2=A0</td>
+</tr>
+</tbody>
+</table>
+<div style=3D"max-width: 600px; margin: auto;">=C2=A0</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr style=3D"text-align: center;">
+<td style=3D"width: 100.0000%; text-align: center;">
+<div data-empty=3D"true">=C2=A0</div>
+<a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/email?6jnJ=
+FoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNSNA%3D&7jfcFoVYiHk%3D=3DuWmJTA%3D%=
+3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2BHa=
+4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3DumqKSN=
+k30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20TDRe=
+A%3D%3D" rel=3D"noopener" style=3D"color: #fff;" target=3D"_blank"> <img al=
+t=3D"Facebook" class=3D"fr-fic fr-dii" src=3D"https://media.geeksforgeeks.o=
+rg/wp-content/cdn-uploads/20230519122659/Linkedin3.png" width=3D"30px"/> </=
+a> <a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/email?6=
+jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNR9k%3D&7jfcFoVYiHk%3D=3DuWmJTA%=
+3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2=
+BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3Dumq=
+KSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20T=
+DReA%3D%3D" rel=3D"noopener noreferrer" style=3D"color: #fff;" target=3D"_b=
+lank"> <img alt=3D"Twitter" class=3D"CToWUd fr-fic fr-dii" src=3D"https://m=
+edia.geeksforgeeks.org/notifications/X-20231229161439.png" width=3D"30px"/>=
+ </a> <a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/emai=
+l?6jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNR9g%3D&7jfcFoVYiHk%3D=3DuWmJ=
+TA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8=
+h%2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3D=
+umqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q=
+20TDReA%3D%3D" rel=3D"noopener noreferrer" style=3D"color: #fff;" target=3D=
+"_blank"> <img alt=3D"Instagram" class=3D"CToWUd fr-fic fr-dii" src=3D"http=
+s://media.geeksforgeeks.org/wp-content/cdn-uploads/20230519122652/Insta3.pn=
+g" style=3D"border-radius: 50%;" width=3D"30px"/> </a> <a href=3D"https://n=
+otificationsapi.geeksforgeeks.org/track-logs/email?6jnJFoZp=3D6DbUHII%3D&%2=
+FyjcHIJYiHk%3D=3DvGKNR9s%3D&7jfcFoVYiHk%3D=3DuWmJTA%3D%3D&7jfcFoVYl3yTIsT9M=
+vp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2BHa4%3D=3Duw%3D%3D&%2BD=
+%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3DumqKSNk30i8%3D&%2FinYDbZlh=
+HGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20TDReA%3D%3D" rel=3D"noop=
+ener noreferrer" style=3D"color: #fff;" target=3D"_blank"> <img alt=3D"Yout=
+ube" class=3D"CToWUd fr-fic fr-dii" src=3D"https://media.geeksforgeeks.org/=
+wp-content/cdn-uploads/20230519122630/YT.png" width=3D"33px"/> </a><a href=
+=3D"https://notificationsapi.geeksforgeeks.org/track-logs/email?6jnJFoZp=3D=
+6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNR9o%3D&7jfcFoVYiHk%3D=3DuWmJTA%3D%3D&7jfc=
+FoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2BHa4%3D=3D=
+uw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3DumqKSNk30i8%3=
+D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20TDReA%3D%3D=
+" rel=3D"noopener noreferrer" style=3D"color: #fff;" target=3D"_blank"> <im=
+g alt=3D"Telegram" class=3D"CToWUd fr-fic fr-dii" src=3D"https://media.geek=
+sforgeeks.org/notifications/teleicon-20231229160655.png" width=3D"33px"/></=
+a><a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/email?6j=
+nJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNR9s%3D&7jfcFoVYiHk%3D=3DuWmJTA%3=
+D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2B=
+Ha4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3DumqK=
+SNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20TD=
+ReA%3D%3D" rel=3D"noopener noreferrer" style=3D"color: #fff;" target=3D"_bl=
+ank"> </a><a href=3D"https://notificationsapi.geeksforgeeks.org/track-logs/=
+email?6jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=3DvGKNR9w%3D&7jfcFoVYiHk%3D=3D=
+uWmJTA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLv=
+r9M8h%2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3=
+D=3DumqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWq=
+PS8Q20TDReA%3D%3D" rel=3D"noopener noreferrer" style=3D"color: #fff;" targe=
+t=3D"_blank"> <img alt=3D"" class=3D"CToWUd fr-fic fr-dii" src=3D"https://m=
+edia.geeksforgeeks.org/wp-content/cdn-uploads/20230519122708/Pin.png" width=
+=3D"30px"/> </a></td>
+</tr>
+</tbody>
+</table>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"max-width: 680px;" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"padding: 40px 10px; width: 100%; font-size: 12px; font-family:=
+ sans-serif; mso-height-rule: exactly; line-height: 18px; text-align: cente=
+r; color: #888888;"><br/><span class=3D"mobile-link--footer"><br/>Write to =
+us: feedback@geeksforgeeks.org</span><span class=3D"mobile-link--footer"><b=
+r/>Coding is not my cup of tea. so I'll <a href=3D"https://notificationsapi=
+.geeksforgeeks.org/track-logs/email?6jnJFoZp=3D6DbUHII%3D&%2FyjcHIJYiHk%3D=
+=3DvGKNR98%3D&7jfcFoVYiHk%3D=3DuWmJTA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3D=
+uWiNRw%3D%3D&%2BT%2FeCpt1hHOCLvr9M8h%2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw=
+%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3D=3DumqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3D=
+uw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWqPS8Q20TDReA%3D%3D" rel=3D"noopener" style=3D=
+"font-family: 'Open Sans', Verdana, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px; color: #212121; text-transform: lowercase;" target=3D"_blan=
+k">Unsubscribe </a> <br/><br/></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</body>
+</html>
+<img height=3D"1" src=3D"https://notificationsapi.geeksforgeeks.org/track-l=
+ogs/email?6jnJFoZp=3D%2BT%2FcGw%3D%3D&%2FyjcHIJYiHk%3D=3D&7jfcFoVYiHk%3D=3D=
+uWmJTA%3D%3D&7jfcFoVYl3yTIsT9Mvp1HA%3D%3D=3DuWiNRw%3D%3D&%2BT%2FeCpt1hHOCLv=
+r9M8h%2BHa4%3D=3Duw%3D%3D&%2BD%2FaEoxplUKILw%3D%3D=3DuWqE&%2FinYDbZuhQ%3D%3=
+D=3DumqKSNk30i8%3D&%2FinYDbZlhHGOJcLgGdFz=3Duw%3D%3D&%2BD%2FTC7ZjgGmE=3DuWq=
+PS8Q20TDReA%3D%3D" width=3D"1"/>
+------=_Part_5547171_748018003.1727944225162--

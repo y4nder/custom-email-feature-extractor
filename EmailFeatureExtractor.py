@@ -66,6 +66,21 @@ class EmailFeatureExtractor:
         self.calculate_char_frequencies()
         self.calculate_capital_run_lengths()
         
+        # Print feature values
+        print("Word Frequencies:")
+        for word, freq in self.word_freq.items():
+            print(f"{word}: {freq:.2f}")
+        
+        print("\nCharacter Frequencies:")
+        for char, freq in self.char_freq.items():
+            print(f"{char}: {freq:.2f}")
+        
+        print("\nCapital Run Lengths:")
+        print(f"Average: {self.capital_run_length_average:.2f}")
+        print(f"Longest: {self.capital_run_length_longest:.2f}")
+        print(f"Total: {self.capital_run_length_total:.2f}")
+
+        
         features = [
             *self.word_freq.values(),
             *self.char_freq.values(),
@@ -79,10 +94,10 @@ class EmailFeatureExtractor:
 # Example usage
 if __name__ == "__main__":
     # Read email text from a file
-    with open('email.txt', 'r') as file:
-        email_text = file.read()
+    # with open('email.txt', 'r') as file:
+    #     email_text = file.read()
 
-    extractor = EmailFeatureExtractor(email_text)
+    extractor = EmailFeatureExtractor(email_text="The address for our upcoming meeting to discuss the email project will be sent directly to your business mail, and you can receive the data report by 3 p.m. on the 415 technology conference table.")
     feature_array = extractor.extract_features()
     
     print("Feature array for prediction:", feature_array)
